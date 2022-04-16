@@ -4,6 +4,9 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
+// react navigation
+import android.os.Bundle;
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -36,5 +39,11 @@ public class MainActivity extends ReactActivity {
       reactRootView.setIsFabric(BuildConfig.IS_NEW_ARCHITECTURE_ENABLED);
       return reactRootView;
     }
+  }
+
+  // react navigation
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 }
