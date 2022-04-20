@@ -23,11 +23,11 @@ const s = StyleSheet.create({
     },
 });
 
-export default function TextInput({title="<Header_Title>", placeholder="<Header_Placeholder>", secure=false}) {
+export default function TextInput({title="<Header_Title>", placeholder="<Header_Placeholder>", secure=false, onChange=null}) {
     return(
         <View style={s.container}>
             <Text style={s.title}>{title}</Text>
-            <RN_TextInput style={s.textInput} placeholder={placeholder} secureTextEntry={secure} />
+            <RN_TextInput style={s.textInput} placeholder={placeholder} secureTextEntry={secure} onChangeText={onChange} />
         </View>
     );
 }

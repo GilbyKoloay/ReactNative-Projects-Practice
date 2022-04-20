@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
 import { launchImageLibrary } from 'react-native-image-picker';
+import { showMessage } from 'react-native-flash-message';
 
 import { DefaultProfile } from '../assets/images';
 import { Header, Gap, TextInput, Button } from '../components';
 
 const s = StyleSheet.create({
+    showMessage: {
+        message: "Error",
+        type: 'default',
+        backgroundColor: '#D9435E',
+        color: '#FFFFFF',
+    },
+
     screen: {
         flex: 1,
     },
@@ -54,8 +62,19 @@ export default function SignUp({navigation}) {
             maxWidth: 200,
             includeBase64: true,
         });
-
         setImage((result.didCancel) ? DefaultProfile : result.assets[0].uri);
+    }
+
+    const nameChange = (val) => {
+        console.log(`nameChange = ${val}`);
+    }
+
+    const emailChange = (val) => {
+        console.log(`nameEmail = ${val}`);
+    }
+
+    const passwordChange = (val) => {
+        console.log(`namePassword = ${val}`);
     }
 
     return(
@@ -68,11 +87,11 @@ export default function SignUp({navigation}) {
                     </TouchableOpacity>
                 </View>
                 <Gap h={15} />
-                <TextInput title="Full Name" placeholder="Type your full name" />
+                <TextInput title="Full Name" placeholder="Type your full name" onChange={nameChange} />
                 <Gap h={15} />
-                <TextInput title="Email Address" placeholder="Type your email address" />
+                <TextInput title="Email Address" placeholder="Type your email address" onChange={emailChange} />
                 <Gap h={15} />
-                <TextInput title="Password" placeholder="Type your password" secure={true} />
+                <TextInput title="Password" placeholder="Type your password" secure={true} onPress={passwordChange} />
                 <Gap h={25} />
                 <Button text="Continue" onPress={() => navigation.reset({routes: [{name: 'HomeRouter'}]})} />
             </View>
