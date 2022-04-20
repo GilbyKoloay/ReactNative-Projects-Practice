@@ -4,6 +4,7 @@ import {
     SplashScreen,
     SignIn,
     SignUp,
+    Home,
     CashOnHand,
     CashOnBank
 } from '../pages';
@@ -28,7 +29,11 @@ export default function Router() {
                 component={SignUp}
                 options={{headerShown: false}}
             />
-            
+            <Stack.Screen 
+                name='Home'
+                component={Home}
+                options={{headerShown: false}}
+            />
             <Stack.Screen 
                 name='CashOnHand'
                 component={CashOnHand}
