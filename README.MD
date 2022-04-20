@@ -1,5 +1,3 @@
-# Mobile Applications using React Native
+# MoneyTracker App.
 
-Feel free to give suggestions or copy the projects. :)
-
-Phone used: Oppo A83 (720 x 1400 px)
+Created for "Mobile Programming Dev. Class"
