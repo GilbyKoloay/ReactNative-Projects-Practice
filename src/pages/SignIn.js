@@ -19,7 +19,7 @@ const s = StyleSheet.create({
 
 export default function SignIn({navigation}) {
     const signInPress = () => {
-        navigation.replace('Home');
+        navigation.replace('HomeRouter');
     }
 
     const createNewAccountPress = () => {

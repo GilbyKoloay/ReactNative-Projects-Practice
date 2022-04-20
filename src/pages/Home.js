@@ -86,14 +86,14 @@ export default function Home({navigation}) {
                     <Button text="Cash On Bank" onPress={() => navigation.push('CashOnBank')} />
                 </View>
             </ScrollView>
-            <View style={s.tab}>
+            {/* <View style={s.tab}>
                 <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
                     <IconHome />
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
                     <Idk />
                 </TouchableOpacity>
-            </View>
+            </View> */}
         </View>
     );
 }
