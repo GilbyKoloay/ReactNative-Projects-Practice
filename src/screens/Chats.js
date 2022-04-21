@@ -1,7 +1,8 @@
-import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, TouchableHighlight } from 'react-native'
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity, TouchableHighlight, ScrollView, Image } from 'react-native'
 
 import { Search, Dots, Camera } from '../assets/icons';
+import { ProfilePerson as ProfileP } from '../assets/images';
 import { Gap } from '../components';
 
 const s = StyleSheet.create({
@@ -50,11 +51,105 @@ const s = StyleSheet.create({
         fontWeight: 'bold',
     }),
     content: {
-
+        flex: 1,
+    },
+    item: {
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        flex: 1,
+        flexDirection: 'row',
+    },
+    profile: {
+        height: 55,
+        width: 55,
+        marginRight: 15,
+    },
+    itemWrap: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    itemTop: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    itemName: {
+        color: '#E9EDEF',
+        fontSize: 17.5,
+    },
+    itemDate: {
+        color: '#8696A0',
+        fontSize: 12.5,
+    },
+    itemBottom: {
+        flex: 1,
+    },
+    itemMessage: {
+        color: '#8696A0',
+        fontSize: 15,
     },
 });
 
 export default function Chats({navigation}) {
+    const [data, setData] = useState([
+        {
+            id: 1,
+            profile: null,
+            name: "Alpha Bravo",
+            chat: [
+                {
+                    id: 1,
+                    date: '01/02/2003',
+                    time: '01:23',
+                    read: true,
+                    message: "First message",
+                }
+            ]
+        },
+        {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}, {id: 9}, {id: 10}, 
+    ]);
+
+    const db = async() => {
+        const url = '192.168.1.6:3000/api/users';
+        
+        // try {
+        //     const result = await fetch(url);
+        //     // console.log(result);
+        //     const json = await result.json();
+        //     console.log(json);
+        // }
+        // catch(e) {
+        //     console.log(e.message);
+        // }
+
+        fetch(url)
+            .then((response) => response.json())
+            .then((json) => console.log(json))
+            .catch((error) => console.log(error));
+    }
+
+    const Item = (data) => {
+        return(
+            <TouchableHighlight key={data.id} underlayColor='#454E55' onPress={db}>
+                <View style={s.item}>
+                    <TouchableOpacity style={s.profile} activeOpacity={0.5}>
+                        <Image source={ProfileP} style={s.profile} />
+                    </TouchableOpacity>
+                    <View style={s.itemWrap}>
+                        <View style={s.itemTop}>
+                            <Text style={s.itemName}>telorbusu</Text>
+                            <Text style={s.itemDate}>01:23</Text>
+                        </View>
+                        <View style={s.itemBottom}>
+                            <Text style={s.itemMessage}>Lorem ipsum dolor sit amet</Text>
+                        </View>
+                    </View>
+                </View>
+            </TouchableHighlight>
+        );
+    }
+
     return(
         <View style={s.screen}>
             <View style={s.header}>
@@ -87,9 +182,9 @@ export default function Chats({navigation}) {
                     </View>
                 </View>
             </View>
-            <View style={s.content}>
-
-            </View>
+            <ScrollView style={s.content}>
+                {data.map(r => Item(r))}
+            </ScrollView>
         </View>
     );
 }
