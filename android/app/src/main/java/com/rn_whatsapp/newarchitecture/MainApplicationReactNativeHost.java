@@ -1,4 +1,4 @@
-package com.whatsapp.newarchitecture;
+package com.rn_whatsapp.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.whatsapp.BuildConfig;
-import com.whatsapp.newarchitecture.components.MainComponentsRegistry;
-import com.whatsapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.rn_whatsapp.BuildConfig;
+import com.rn_whatsapp.newarchitecture.components.MainComponentsRegistry;
+import com.rn_whatsapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
