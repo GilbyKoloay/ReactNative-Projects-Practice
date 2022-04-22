@@ -2,7 +2,8 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
     Splash,
-    Chats
+    Chats,
+    MyProfile
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -17,6 +18,10 @@ export default function Router() {
             <Stack.Screen
                 name='Chats'
                 component={Chats}
+            />
+            <Stack.Screen
+                name='MyProfile'
+                component={MyProfile}
             />
         </Stack.Navigator>
     );

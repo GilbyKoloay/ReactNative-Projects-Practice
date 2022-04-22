@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, TouchableHighlight, ScrollView, Image } from 'react-native'
 
-import { Search, Dots, Camera } from '../assets/icons';
+import { Search, DotsDark as Dots, CameraDark as Camera } from '../assets/icons';
 import { ProfilePerson as ProfileP } from '../assets/images';
 import { Gap } from '../components';
 
@@ -63,6 +63,7 @@ const s = StyleSheet.create({
         height: 55,
         width: 55,
         marginRight: 15,
+        borderRadius: 55/2,
     },
     itemWrap: {
         flex: 1,
@@ -110,35 +111,28 @@ export default function Chats({navigation}) {
         {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}, {id: 9}, {id: 10}, 
     ]);
 
-    const db = async() => {
-        const url = '192.168.1.6:3000/api/users';
-        
-        // try {
-        //     const result = await fetch(url);
-        //     // console.log(result);
-        //     const json = await result.json();
-        //     console.log(json);
-        // }
-        // catch(e) {
-        //     console.log(e.message);
-        // }
-
-        fetch(url)
-            .then((response) => response.json())
-            .then((json) => console.log(json))
-            .catch((error) => console.log(error));
+    const getData = async() => {
+        try {
+            const result = await fetch('http://192.168.1.6:3000/api/users');
+            // console.log(result);
+            const json = await result.json();
+            console.log(json);
+        }
+        catch(e) {
+            console.log(e.message);
+        }
     }
 
-    const Item = (data) => {
+    const Item = ({id}) => {
         return(
-            <TouchableHighlight key={data.id} underlayColor='#454E55' onPress={db}>
+            <TouchableHighlight key={id} underlayColor='#454E55' onPress={() => {}}>
                 <View style={s.item}>
                     <TouchableOpacity style={s.profile} activeOpacity={0.5}>
                         <Image source={ProfileP} style={s.profile} />
                     </TouchableOpacity>
                     <View style={s.itemWrap}>
                         <View style={s.itemTop}>
-                            <Text style={s.itemName}>telorbusu</Text>
+                            <Text style={s.itemName}>{(id%2 === 1) ? 'telorbuzzu' : 'telor busu'}</Text>
                             <Text style={s.itemDate}>01:23</Text>
                         </View>
                         <View style={s.itemBottom}>
@@ -159,7 +153,7 @@ export default function Chats({navigation}) {
                         <TouchableOpacity activeOpacity={0.5}>
                             <Search style={{marginRight: 25}}/>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.5}>
+                        <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.push('MyProfile')}>
                             <Dots />
                         </TouchableOpacity>
                     </View>
