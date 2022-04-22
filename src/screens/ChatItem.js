@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, View, ImageBackground, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, ImageBackground, ScrollView, TextInput, TouchableOpacity, Text } from 'react-native';
 
 import { CameraDark, Smile, Attachment, Microphone } from '../assets/icons';
 import { ChatItemBg } from '../assets/images';
@@ -14,9 +14,25 @@ const s = StyleSheet.create({
     },
     chats: {
         flex: 1,
-
-        // borderWidth: 1,
-        // borderColor: 'white',
+    },
+    message: (type) => ({
+        marginVertical: 5,
+        marginRight: (type === 'send') ? 10 : 100,
+        marginLeft: (type === 'receive') ? 10 : 100,
+        padding: 7.5,
+        alignSelf: (type === 'send') ? 'flex-end': 'flex-start',
+        backgroundColor: (type === 'send') ? '#005C4B' : '#202C33',
+        borderRadius: 10,
+    }),
+    messageText: (type) => ({
+        textAlign: 'left',
+        color: '#E8ECEE',
+        fontSize: 15,
+    }),
+    messageTime: {
+        textAlign: 'right',
+        color: '#8696A0',
+        fontSize: 12.5,
     },
     bottom: {
         paddingTop: 10,
@@ -24,7 +40,7 @@ const s = StyleSheet.create({
         paddingHorizontal: 5,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#010202',
+        // backgroundColor: '#010202',
     },
     input: {
         paddingVertical: 7.5,
@@ -54,17 +70,25 @@ const s = StyleSheet.create({
     },
 });
 
-export default function ChatItem({navigation}) {
+export default function ChatItem({route, navigation}) {
+    const [data, setData] = useState(route.params[0]);
+    const [chats, setChats] = useState(route.params[1]);
+
     return(
         <View style={s.screen}>
-            <Header back={true} usePicture={true} onPressLeft={() => navigation.goBack()} title="telorbusu" text="online" useMid={true} onPressMid={() => {}} video={true} phone={true} dots={true} />
+            <Header back={'light'} usePicture={true} picture={(data.picture !== null) ? data.picture : null} onPressLeft={() => navigation.goBack()} title={data.name} text={`last seen at ${data.lastSeen[1]}`} useMid={true} onPressMid={() => {}} video={true} phone={true} dots={true} />
             <ImageBackground source={ChatItemBg} style={s.content} resizeMode='cover'>
                 <ScrollView style={s.chats}>
-
+                    {chats.map(r => {
+                        return(<TouchableOpacity key={r.id} style={s.message(r.type)} activeOpacity={0.5}>
+                            <Text style={s.messageText(r.type)}>{r.message}</Text>
+                            <Text style={s.messageTime}>{r.time}</Text>
+                        </TouchableOpacity>)
+                    })}
                 </ScrollView>
                 <View style={s.bottom}>
                     <View style={s.input}>
-                        <TouchableOpacity style={s.icon} activeOpacity={0.5}>
+                        <TouchableOpacity style={s.icon} activeOpacity={0.25}>
                             <Smile />
                         </TouchableOpacity>
                         <TextInput style={s.inputText} placeholder="Message" placeholderTextColor='#8696A0' />

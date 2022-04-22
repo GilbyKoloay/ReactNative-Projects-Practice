@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity, ImageBackground, TouchableHighlight, Text} from 'react-native';
 
 import { CameraLight as Camera, Person, Pen, Info, PhoneDark as Phone } from '../assets/icons';
@@ -13,7 +13,7 @@ const s = StyleSheet.create({
     content: {
         marginTop: 25,
     },
-    profilePicture: {
+    picture: {
         height: 150,
         width: 150,
         alignSelf: 'center',
@@ -63,7 +63,9 @@ const s = StyleSheet.create({
     },
 });
 
-export default function MyProfile({navigation}) {
+export default function MyProfile({route, navigation}) {
+    const [data, setData] = useState(route.params);
+
     const ItemWrap = (title, text, subText, pen) => {
         return(
             <View style={s.itemWrap}>
@@ -81,10 +83,10 @@ export default function MyProfile({navigation}) {
 
     return(
         <View style={s.screen}>
-            <Header back={true} title="My Profile" onPressLeft={() => navigation.goBack()} />
+            <Header back={'dark'} title="My Profile" onPressLeft={() => navigation.goBack()} />
             <View style={s.content}>
                 <TouchableOpacity activeOpacity={0.5}>
-                    <ImageBackground source={Profile} style={s.profilePicture}>
+                    <ImageBackground source={(data.picture !== null) ? data.picture : Profile} style={s.picture} imageStyle={{borderRadius: 150/2}}>
                         <View style={s.camera}>
                             <Camera />
                         </View>
@@ -95,21 +97,21 @@ export default function MyProfile({navigation}) {
             <TouchableHighlight underlayColor='#454E55' onPress={() => {}}>
                 <View style={s.item}>
                     <Person style={s.icon} />
-                    {ItemWrap('Name', "telorbusu", "This is not your username or pin. This name will be visible to your WhatsApp contacts.", true)}
+                    {ItemWrap('Name', data.name, "This is not your username or pin. This name will be visible to your WhatsApp contacts.", true)}
                 </View>
             </TouchableHighlight>
             <View style={s.line} />
             <TouchableHighlight underlayColor='#454E55' onPress={() => {}}>
                 <View style={s.item}>
                     <Info style={s.icon} />
-                    {ItemWrap('About', "..- ..--.. .--.....-- ..- ..--..", null , true)}
+                    {ItemWrap('About', data.about, null , true)}
                 </View>
             </TouchableHighlight>
             <View style={s.line} />
             <TouchableHighlight underlayColor='#454E55' onPress={() => {}}>
                 <View style={s.item}>
                     <Phone style={s.icon} />
-                    {ItemWrap('Phone', "+62 813-4065-6305", null, false)}
+                    {ItemWrap('Phone', `+ ${data.phone}`, null, false)}
                 </View>
             </TouchableHighlight>
         </View>

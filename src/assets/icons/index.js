@@ -5,8 +5,8 @@ import DotsDark from './DotsDark.svg';
 import DotsLight from './DotsLight.svg';
 import CameraDark from './CameraDark.svg';
 import CameraLight from './CameraLight.svg';
-import BackGrey from './BackGrey.svg';
-// import BackWhite from './BackWhite.svg';
+import BackDark from './BackDark.svg';
+import BackLight from './BackLight.svg';
 import Person from './Person.svg';
 import Info from './Info.svg';
 import Pen from './Pen.svg';
@@ -28,8 +28,8 @@ export {
     DotsLight,
     CameraDark,
     CameraLight,
-    BackGrey,
-    // BackWhite,
+    BackDark,
+    BackLight,
     Person,
     Info,
     Pen,

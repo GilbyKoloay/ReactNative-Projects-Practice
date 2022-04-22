@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, TouchableHighlight, Image, Text, TouchableOpacity } from 'react-native';
 
 import { ProfilePerson as Picture } from '../assets/images';
-import { BackGrey as Back, VideoLight, PhoneLight, DotsLight as Dots } from '../assets/icons';
+import { BackDark, BackLight, VideoLight, PhoneLight, DotsLight as Dots } from '../assets/icons';
 
 const s = StyleSheet.create({
     container: {
@@ -51,7 +51,7 @@ export default function Header({back=false, usePicture=false, picture=null, onPr
         <View style={s.container}>
             <TouchableHighlight underlayColor='#454E55' onPress={onPressLeft}>
                 <View style={s.left}>
-                    {(back) && <Back />}
+                    {(back === 'dark') ? <BackDark /> : (back === 'light') && <BackLight />}
                     {(usePicture) ? <Image source={(picture === null) ? Picture : picture} style={s.profile} /> : <View style={{marginHorizontal: 12.5}} />}
                 </View>
             </TouchableHighlight>

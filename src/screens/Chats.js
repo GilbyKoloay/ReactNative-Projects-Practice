@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, TouchableHighlight, ScrollView, Image } from 'react-native'
 
 import { Search, DotsDark as Dots, CameraDark as Camera } from '../assets/icons';
-import { ProfilePerson as ProfileP } from '../assets/images';
+import { ProfilePerson as Profile } from '../assets/images';
 import { Gap } from '../components';
+
+import Data from '../data';
 
 const s = StyleSheet.create({
     screen: {
@@ -50,6 +52,14 @@ const s = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
     }),
+    contentEmpty: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    contentEmptyText: {
+        color: '#E9EDEF',
+    },
     content: {
         flex: 1,
     },
@@ -93,55 +103,59 @@ const s = StyleSheet.create({
 });
 
 export default function Chats({navigation}) {
-    const [data, setData] = useState([
-        {
-            id: 1,
-            profile: null,
-            name: "Alpha Bravo",
-            chat: [
-                {
-                    id: 1,
-                    date: '01/02/2003',
-                    time: '01:23',
-                    read: true,
-                    message: "First message",
-                }
-            ]
-        },
-        {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}, {id: 9}, {id: 10}, {id: 11}, {id: 12}, {id: 13}, {id: 14}, {id: 15}, 
-    ]);
+    const [userPhone, setUserPhone] = useState('6281');
+    const [userData, setUserData] = useState(Data.filter(r => r.phone === userPhone));
 
-    const getData = async() => {
-        try {
-            const result = await fetch('http://192.168.1.6:3000/api/users');
-            // console.log(result);
-            const json = await result.json();
-            console.log(json);
-        }
-        catch(e) {
-            console.log(e.message);
-        }
-    }
+    // const getData = async() => {
+    //     try {
+    //         const result = await fetch('http://192.168.1.6:3000/api/users');
+    //         // console.log(result);
+    //         const json = await result.json();
+    //         console.log(json);
+    //     }
+    //     catch(e) {
+    //         console.log(e.message);
+    //     }
+    // }
 
-    const Item = ({id}) => {
-        return(
-            <TouchableHighlight key={id} underlayColor='#454E55' onPress={() => navigation.push('ChatItem')}>
-                <View style={s.item}>
-                    <TouchableOpacity style={s.profile} activeOpacity={0.5}>
-                        <Image source={ProfileP} style={s.profile} />
-                    </TouchableOpacity>
-                    <View style={s.itemWrap}>
-                        <View style={s.itemTop}>
-                            <Text style={s.itemName}>telorbusu</Text>
-                            <Text style={s.itemDate}>01:23</Text>
-                        </View>
-                        <View style={s.itemBottom}>
-                            <Text style={s.itemMessage}>Lorem ipsum dolor sit amet</Text>
-                        </View>
-                    </View>
+    const Item = () => {
+        if(userData.length === 0) {
+            return(
+                <View style={s.contentEmpty}>
+                    <Text style={s.contentEmptyText}>You don't have any chats</Text>
                 </View>
-            </TouchableHighlight>
-        );
+            );
+        }
+        else {
+            return(
+                <ScrollView style={s.content}>
+                    {userData[0].contacts.map(r => {
+                        const contactData = Data.filter(d => d.id === r.id);
+
+                        let ItemPicture = (contactData[0].picture !== null) ? contactData[0].picture : Profile;
+
+                        return(
+                            <TouchableHighlight key={r.id} underlayColor='#454E55' onPress={() => navigation.push('ChatItem', [contactData[0], r.chats])}>
+                                <View style={s.item}>
+                                    <TouchableOpacity style={s.profile} activeOpacity={0.5}>
+                                        <Image source={ItemPicture} style={s.profile} />
+                                    </TouchableOpacity>
+                                    <View style={s.itemWrap}>
+                                        <View style={s.itemTop}>
+                                            <Text style={s.itemName}>{contactData[0].name}</Text>
+                                            <Text style={s.itemDate}>{contactData[0].lastSeen[1]}</Text>
+                                        </View>
+                                        <View style={s.itemBottom}>
+                                            <Text style={s.itemMessage}>{r.chats[r.chats.length-1].message}</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableHighlight>
+                        );
+                    })}
+                </ScrollView>
+            );
+        }
     }
 
     return(
@@ -153,7 +167,7 @@ export default function Chats({navigation}) {
                         <TouchableOpacity activeOpacity={0.5}>
                             <Search style={{marginRight: 25}}/>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.push('MyProfile')}>
+                        <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.push('MyProfile', userData[0])}>
                             <Dots />
                         </TouchableOpacity>
                     </View>
@@ -176,9 +190,7 @@ export default function Chats({navigation}) {
                     </View>
                 </View>
             </View>
-            <ScrollView style={s.content}>
-                {data.map(r => Item(r))}
-            </ScrollView>
+            {Item()}
         </View>
     );
 }
