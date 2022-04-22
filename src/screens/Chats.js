@@ -108,7 +108,7 @@ export default function Chats({navigation}) {
                 }
             ]
         },
-        {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}, {id: 9}, {id: 10}, 
+        {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}, {id: 9}, {id: 10}, {id: 11}, {id: 12}, {id: 13}, {id: 14}, {id: 15}, 
     ]);
 
     const getData = async() => {
@@ -125,14 +125,14 @@ export default function Chats({navigation}) {
 
     const Item = ({id}) => {
         return(
-            <TouchableHighlight key={id} underlayColor='#454E55' onPress={() => {}}>
+            <TouchableHighlight key={id} underlayColor='#454E55' onPress={() => navigation.push('ChatItem')}>
                 <View style={s.item}>
                     <TouchableOpacity style={s.profile} activeOpacity={0.5}>
                         <Image source={ProfileP} style={s.profile} />
                     </TouchableOpacity>
                     <View style={s.itemWrap}>
                         <View style={s.itemTop}>
-                            <Text style={s.itemName}>{(id%2 === 1) ? 'telorbuzzu' : 'telor busu'}</Text>
+                            <Text style={s.itemName}>telorbusu</Text>
                             <Text style={s.itemDate}>01:23</Text>
                         </View>
                         <View style={s.itemBottom}>

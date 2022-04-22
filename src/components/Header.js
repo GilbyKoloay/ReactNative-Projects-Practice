@@ -1,16 +1,19 @@
 import React from 'react';
-import { StyleSheet, View, TouchableHighlight, Image, Text } from 'react-native';
+import { StyleSheet, View, TouchableHighlight, Image, Text, TouchableOpacity } from 'react-native';
 
 import { ProfilePerson as Picture } from '../assets/images';
 import { BackGrey as Back, VideoLight, PhoneLight, DotsLight as Dots } from '../assets/icons';
 
 const s = StyleSheet.create({
     container: {
-        padding: 10,
+        paddingVertical: 10,
+        paddingRight: 10,
         flexDirection: 'row',
         backgroundColor: '#202C33',
     },
     left: {
+        paddingLeft: 10,
+        paddingRight: 2.5,
         flex: 1,
         alignItems: 'center',
         flexDirection: 'row',
@@ -22,8 +25,7 @@ const s = StyleSheet.create({
         borderRadius: 40/2,
     },
     mid: {
-        flex: 1,
-        marginLeft: 7.5,
+        paddingLeft: 5,
         flex: 1,
     },
     title: (text) => ({
@@ -60,15 +62,15 @@ export default function Header({back=false, usePicture=false, picture=null, onPr
                 </View>
             </TouchableHighlight>
             <View style={s.right}>
-                {(video) && <TouchableHighlight style={s.icon} underlayColor='#454E55' onPress={() => {}}>
-                    <VideoEnable />
-                </TouchableHighlight>}
-                {(phone) && <TouchableHighlight style={s.icon} underlayColor='#454E55' onPress={() => {}}>
-                    <PhoneEnable />
-                </TouchableHighlight>}
-                {(dots) && <TouchableHighlight style={s.icon} underlayColor='#454E55' onPress={() => {}}>
+                {(video) && <TouchableOpacity style={s.icon}>
+                    <VideoLight />
+                </TouchableOpacity>}
+                {(phone) && <TouchableOpacity style={s.icon}>
+                    <PhoneLight />
+                </TouchableOpacity>}
+                {(dots) && <TouchableOpacity style={s.icon}>
                     <Dots />
-                </TouchableHighlight>}
+                </TouchableOpacity>}
             </View>
         </View>
     );

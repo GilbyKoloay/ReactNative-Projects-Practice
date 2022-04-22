@@ -18,6 +18,9 @@ import VideoLight from './VideoLight.svg';
 import VideoDark from './VideoDark.svg';
 import VideoGreenLight from './VideoGreenLight.svg';
 import VideoGreenDark from './VideoGreenDark.svg';
+import Smile from './Smile.svg';
+import Attachment from './Attachment.svg';
+import Microphone from './Microphone.svg';
 
 export {
     Search,
@@ -31,5 +34,8 @@ export {
     Info,
     Pen,
     PhoneLight, PhoneDark, PhoneGreenLight, PhoneGreenDark,
-    VideoLight, VideoDark, VideoGreenLight, VideoGreenDark
+    VideoLight, VideoDark, VideoGreenLight, VideoGreenDark,
+    Smile,
+    Attachment,
+    Microphone
 };

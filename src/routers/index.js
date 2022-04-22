@@ -3,7 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
     Splash,
     Chats,
-    MyProfile
+    MyProfile,
+    ChatItem
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -22,6 +23,10 @@ export default function Router() {
             <Stack.Screen
                 name='MyProfile'
                 component={MyProfile}
+            />
+            <Stack.Screen
+                name='ChatItem'
+                component={ChatItem}
             />
         </Stack.Navigator>
     );
