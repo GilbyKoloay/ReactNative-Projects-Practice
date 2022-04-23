@@ -22,7 +22,11 @@ const s = StyleSheet.create({
         padding: 7.5,
         alignSelf: (type === 'send') ? 'flex-end': 'flex-start',
         backgroundColor: (type === 'send') ? '#005C4B' : '#202C33',
-        borderRadius: 10,
+        // borderRadius: 10,
+        borderTopLeftRadius: (type === 'send') ? 10 : 0,
+        borderTopRightRadius: (type === 'send') ? 0 : 10,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
     }),
     messageText: (type) => ({
         textAlign: 'left',
@@ -76,7 +80,7 @@ export default function ChatItem({route, navigation}) {
 
     return(
         <View style={s.screen}>
-            <Header back={'light'} usePicture={true} picture={(data.picture !== null) ? data.picture : null} onPressLeft={() => navigation.goBack()} title={data.name} text={`last seen at ${data.lastSeen[1]}`} useMid={true} onPressMid={() => {}} video={true} phone={true} dots={true} />
+            <Header back={'light'} usePicture={true} picture={(data.picture !== null) ? data.picture : null} onPressLeft={() => navigation.goBack()} useMid={true} title={data.name} text={`last seen at ${data.lastSeen[1]}`} onPressMid={() => navigation.push('Contact', data)} video={true} phone={true} dots={true} />
             <ImageBackground source={ChatItemBg} style={s.content} resizeMode='cover'>
                 <ScrollView style={s.chats}>
                     {chats.map(r => {

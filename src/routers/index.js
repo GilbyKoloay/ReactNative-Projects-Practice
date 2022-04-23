@@ -4,7 +4,8 @@ import {
     Splash,
     Chats,
     MyProfile,
-    ChatItem
+    ChatItem,
+    Contact
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +28,10 @@ export default function Router() {
             <Stack.Screen
                 name='ChatItem'
                 component={ChatItem}
+            />
+            <Stack.Screen
+                name='Contact'
+                component={Contact}
             />
         </Stack.Navigator>
     );

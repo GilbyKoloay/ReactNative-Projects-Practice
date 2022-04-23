@@ -1,6 +1,7 @@
 // icons
 
-import Search from './Search.svg';
+import SearchDark from './SearchDark.svg';
+import SearchGreenLight from './SearchGreenLight.svg';
 import DotsDark from './DotsDark.svg';
 import DotsLight from './DotsLight.svg';
 import CameraDark from './CameraDark.svg';
@@ -21,9 +22,12 @@ import VideoGreenDark from './VideoGreenDark.svg';
 import Smile from './Smile.svg';
 import Attachment from './Attachment.svg';
 import Microphone from './Microphone.svg';
+import Block from './Block.svg';
+import DeleteChat from './DeleteChat.svg';
+import DeleteContact from './DeleteContact.svg';
 
 export {
-    Search,
+    SearchDark, SearchGreenLight,
     DotsDark,
     DotsLight,
     CameraDark,
@@ -37,5 +41,8 @@ export {
     VideoLight, VideoDark, VideoGreenLight, VideoGreenDark,
     Smile,
     Attachment,
-    Microphone
+    Microphone,
+    Block,
+    DeleteChat,
+    DeleteContact
 };

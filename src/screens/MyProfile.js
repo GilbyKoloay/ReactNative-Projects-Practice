@@ -76,7 +76,7 @@ export default function MyProfile({route, navigation}) {
                     </View>
                     {(pen) && <Pen />}
                 </View>
-                <Text style={s.itemSubText}>{subText}</Text>
+                {(subText !== null) && <Text style={s.itemSubText}>{subText}</Text>}
             </View>
         );
     }

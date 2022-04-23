@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, TouchableHighlight, ScrollView, Image } from 'react-native'
 
-import { Search, DotsDark as Dots, CameraDark as Camera } from '../assets/icons';
+import { SearchDark as Search, DotsDark as Dots, CameraDark as Camera } from '../assets/icons';
 import { ProfilePerson as Profile } from '../assets/images';
 import { Gap } from '../components';
 
@@ -103,7 +103,7 @@ const s = StyleSheet.create({
 });
 
 export default function Chats({navigation}) {
-    const [userPhone, setUserPhone] = useState('6281');
+    const [userPhone, setUserPhone] = useState('6282');
     const [userData, setUserData] = useState(Data.filter(r => r.phone === userPhone));
 
     // const getData = async() => {

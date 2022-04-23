@@ -55,7 +55,7 @@ export default function Header({back=false, usePicture=false, picture=null, onPr
                     {(usePicture) ? <Image source={(picture === null) ? Picture : picture} style={s.profile} /> : <View style={{marginHorizontal: 12.5}} />}
                 </View>
             </TouchableHighlight>
-            <TouchableHighlight style={s.mid} underlayColor='#454E55' onPress={(useMid) ? onPressMid : null}>
+            <TouchableHighlight style={s.mid} underlayColor='#454E55' onPress={onPressMid}>
                 <View>
                     <Text style={s.title(text)}>{title}</Text>
                     {(text !== null) && <Text style={s.text}>{text}</Text>}
