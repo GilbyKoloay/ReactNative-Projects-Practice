@@ -23,6 +23,7 @@ const s = StyleSheet.create({
         alignItems: 'center',
     },
     whatsApp: {
+        fontFamily: 'Helvetica',
         color: '#8696A0',
         fontSize: 20,
     },
@@ -48,6 +49,7 @@ const s = StyleSheet.create({
         borderColor: (active) ? '#00A884' : '#202C33',
     }),
     tabItemText: (active) => ({
+        fontFamily: 'Helvetica',
         color: (active) ? '#00A884' : '#8696A0',
         fontSize: 15,
         fontWeight: 'bold',
@@ -102,8 +104,8 @@ const s = StyleSheet.create({
     },
 });
 
-export default function Chats({navigation}) {
-    const [userPhone, setUserPhone] = useState('6282');
+export default function Chats({route, navigation}) {
+    const [userPhone, setUserPhone] = useState(route.params);
     const [userData, setUserData] = useState(Data.filter(r => r.phone === userPhone));
 
     // const getData = async() => {

@@ -2,6 +2,8 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
     Splash,
+    Welcome,
+    SignIn,
     Chats,
     MyProfile,
     ChatItem,
@@ -16,6 +18,14 @@ export default function Router() {
             <Stack.Screen
                 name='Splash'
                 component={Splash}
+            />
+            <Stack.Screen
+                name='Welcome'
+                component={Welcome}
+            />
+            <Stack.Screen
+                name='SignIn'
+                component={SignIn}
             />
             <Stack.Screen
                 name='Chats'

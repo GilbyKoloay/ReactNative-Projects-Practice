@@ -19,7 +19,7 @@ const s = StyleSheet.create({
 
 export default function Splash({navigation}) {
     useEffect(() => {
-        setTimeout(() => navigation.replace('Chats'), 250);
+        setTimeout(() => navigation.replace('Welcome'), 250);
     }, []);
 
     return(

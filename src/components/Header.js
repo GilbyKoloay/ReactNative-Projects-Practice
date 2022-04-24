@@ -6,10 +6,14 @@ import { BackDark, BackLight, VideoLight, PhoneLight, DotsLight as Dots } from '
 
 const s = StyleSheet.create({
     container: {
-        paddingVertical: 10,
+        height: 60,
+        paddingVertical: 15,
         paddingRight: 10,
         flexDirection: 'row',
         backgroundColor: '#202C33',
+
+        borderWidth: 1,
+        borderColor: 'white',
     },
     left: {
         paddingLeft: 10,
@@ -17,6 +21,9 @@ const s = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         flexDirection: 'row',
+
+        borderWidth: 1,
+        borderColor: 'red',
     },
     profile: {
         marginLeft: 5,
@@ -27,18 +34,30 @@ const s = StyleSheet.create({
     mid: {
         paddingLeft: 5,
         flex: 1,
+        justifyContent: 'center',
+
+        borderWidth: 1,
+        borderColor: 'green',
     },
     title: (text) => ({
-        paddingVertical: (text !== null) ? 0 : 22.5/2,
+        fontFamily: 'Helvetica',
         color: '#E9EDEF',
         fontSize: 17.5,
+
+        borderWidth: 1,
+        borderColor: 'yellow',
     }),
     text: {
+        marginTop: -7.5,
+        fontFamily: 'Helvetica',
         color: '#E9EDEF',
         fontSize: 15,
     },
     right: {
         flexDirection: 'row',
+
+        borderWidth: 1,
+        borderColor: 'blue',
     },
     icon: {
         marginLeft: 30,

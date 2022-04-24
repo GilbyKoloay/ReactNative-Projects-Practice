@@ -50,14 +50,17 @@ const s = StyleSheet.create({
         alignItems: 'center',
     },
     itemTitle: {
+        fontFamily: 'Helvetica',
         color: '#8696A0',
         fontSize: 15,
     },
     itemText: {
+        fontFamily: 'Helvetica',
         color: '#E9EDEF',
         fontSize: 17.5,
     },
     itemSubText: {
+        fontFamily: 'Helvetica',
         color: '#8696A0',
         fontSize: 12.5,
     },

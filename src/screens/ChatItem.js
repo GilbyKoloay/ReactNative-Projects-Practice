@@ -29,11 +29,13 @@ const s = StyleSheet.create({
         borderBottomRightRadius: 10,
     }),
     messageText: (type) => ({
+        fontFamily: 'Helvetica',
         textAlign: 'left',
         color: '#E8ECEE',
         fontSize: 15,
     }),
     messageTime: {
+        fontFamily: 'Helvetica',
         textAlign: 'right',
         color: '#8696A0',
         fontSize: 12.5,
@@ -58,6 +60,7 @@ const s = StyleSheet.create({
         marginHorizontal: 10,
     },
     inputText: {
+        fontFamily: 'Helvetica',
         padding: 0,
         flex: 1,
         color: '#E9EDEF',

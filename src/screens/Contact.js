@@ -26,18 +26,21 @@ const s = StyleSheet.create({
         borderRadius: 125/2,
     },
     name: {
+        fontFamily: 'Helvetica',
         color: '#E9EDEF',
         fontSize: 22.5,
         textAlign: 'center',
     },
     phone: {
         marginVertical: 5,
+        fontFamily: 'Helvetica',
         color: '#8696A0',
         fontSize: 17.5,
         textAlign: 'center',
     },
     lastSeen: {
         color: '#8696A0',
+        fontFamily: 'Helvetica',
         fontSize: 12.5,
         textAlign: 'center',
     },
@@ -52,6 +55,7 @@ const s = StyleSheet.create({
     },
     optionText: {
         marginTop: 15,
+        fontFamily: 'Helvetica',
         color: '#00A884',
         fontSize: 12.5,
     },
@@ -65,6 +69,7 @@ const s = StyleSheet.create({
     },
     bottomItemText: {
         marginLeft: 25,
+        fontFamily: 'Helvetica',
         color: '#F15C6D',
         fontSize: 17.5,
     },
