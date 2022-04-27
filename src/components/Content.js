@@ -6,11 +6,10 @@ import { ArrowRight as Arrow } from '../assets/icons';
 const styles = StyleSheet.create({
     container: {
         marginHorizontal: 7.5,
-        paddingHorizontal: 0,
         flex: 1,
     },
     title: {
-        marginLeft: 10,
+        marginLeft: 17.5,
         marginBottom: 5,
         fontFamily: 'Roboto',
         color: '#737373',

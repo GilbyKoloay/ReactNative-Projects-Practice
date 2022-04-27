@@ -13,8 +13,8 @@ export default function DualSIM_Cellular({navigation}) {
     return(
         <View style={styles.screen}>
             <Header title="SIM Card & Cellular" back={["Settings", () => navigation.goBack()]} />
-            <Gap h={15} />
             <ScrollView>
+                <Gap h={10} />
                 <Content title="SIM INFO & SETTINGS" items={[
                     {key: 1, icon: '#58CAFF', title: "SIM1", arrow: true, onPress: () => navigation.push("SIM Info & Settings")},
                 ]} />
@@ -33,7 +33,7 @@ export default function DualSIM_Cellular({navigation}) {
                 <Content title="INTERNET CONNECTION CONTROL" items={[
                     { key: 1, title: "Apps using Wi-Fi and Mobile Data", arrow: true, onPress: () => console.log(`Apps usign wi-Fi and Mobile Data`)},
                 ]} />
-                <Gap h={10} />
+                <Gap h={12.5} />
             </ScrollView>
         </View>
     );
