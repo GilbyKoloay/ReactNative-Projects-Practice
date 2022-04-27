@@ -1,5 +1,9 @@
 // icons
-import arrowRight from './arrowRight.svg';
-import back from './back.svg';
 
-export { arrowRight, back };
+import ArrowRight from './ArrowRight.svg';
+import Back from './Back.svg';
+
+export {
+    ArrowRight,
+    Back
+};

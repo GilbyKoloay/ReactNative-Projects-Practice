@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, View, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+
 import { Gap, Header, Content } from '../components';
 
 const styles = StyleSheet.create({
-
+    screen: {
+        flex: 1,
+        backgroundColor: '#E6E6E6',
+    },
 });
 
 export default function App({navigation}) {
-    // const [airlpaneMode, setAirplaneMode] = useState(false);
+    const [airplaneMode, setAirplaneMode] = useState(false);
+    const changeAirplaneMode = (val) => {
+        setAirplaneMode(val);
+    }
 
     return(
-        <View style={{flex: 1}}>
+        <View style={styles.screen}>
             <Header title="Settings" />
-            <ScrollView style={{backgroundicon: '#E6E6E6'}}>
-                <Gap h={15} />
+            <Gap h={15} />
+            <ScrollView>
                 <Content items={[
-                    {key: 1, icon: '#FBA64F', title: "Airplane Mode", switcH: true},
+                    {key: 1, icon: '#FBA64F', title: "Airplane Mode", switcH: {use: true, onValueChange: () => changeAirplaneMode, value: airplaneMode}},
                     {key: 2, icon: '#65E19F', title: "Dual SIM & Cellular", arrow: true, onPress: () => navigation.push('Dual SIM & Cellular')},
                     {key: 3, icon: '#4DC5FD', title: "Wi-Fi", text: "ZTE_2.4G_px6Ahp", arrow: true, onPress: () => console.log(`Wi-Fi`)},
                     {key: 4, icon: '#55C8FE', title: "Bluetooth", text: "Off", arrow: true, onPress: () => {console.log(`Bluetooth`)}},
