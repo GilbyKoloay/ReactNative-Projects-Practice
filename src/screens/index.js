@@ -41,7 +41,7 @@ const Settings = ({navigation}) => {
                 ]} />
                 <Gap h={12.5} />
                 <Content items={[
-                    {key: 1, icon: {color: '#FC7565', icon: <I_NSB />}, title: "Notification & Status Bar", arrow: true, onPress: () => {console.log(`Notification & Status Bar`)}},
+                    {key: 1, icon: {color: '#FC7565', icon: <I_NSB />}, title: "Notification & Status Bar", arrow: true, onPress: () => navigation.push("Notification & Status Bar")},
                     {key: 2, icon: {color: '#F9CC40', icon: <I_DB />}, title: "Display & Brightness", arrow: true, onPress: () => {console.log(`Display & Brightness`)}},
                     {key: 3, icon: {color: '#8AA9FE', icon: <I_SV />}, title: "Sound & Vibration", arrow: true, onPress: () => {console.log(`Sound & Vibration`)}},
                     {key: 4, icon: {color: '#FC7565', icon: <I_QT />}, title: "Quiet Time", arrow: true, onPress: () => {console.log(`Quiet Time`)}},
@@ -100,9 +100,12 @@ import Carrier from './DualSIM_Cellular/Carrier';
 import OtherWirelessConnections from './OtherWirelessConnections';
 import PersonalHotspot from './OtherWirelessConnections/PersonalHotspot';
 
+import Notification_StatusBar from './Notification_StatusBar';
+
 export {
     Settings,
 
     DualSIM_Cellular, SIMInfo_Settings, Carrier,
     OtherWirelessConnections, PersonalHotspot,
+    Notification_StatusBar,
 };
