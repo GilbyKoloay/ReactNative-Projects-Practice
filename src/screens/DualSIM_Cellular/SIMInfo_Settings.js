@@ -37,7 +37,7 @@ export default function SIMInfo_Settings({navigation}) {
                 <Content title="NETWORK SETTINGS" items={[
                     { key: 1, title: "Data Roaming", switcH: {use: true, onValueChange: () => changeDataRoaming, value: DataRoaming}},
                     { key: 2, title: "Access Point Name", arrow: true, onPress: () => console.log(`Access Point Name`)},
-                    { key: 3, title: "Carrier", text: "TELKOMSEL", arrow: true, onPress: () => console.log(`Carrier`)},
+                    { key: 3, title: "Carrier", text: "TELKOMSEL", arrow: true, onPress: () => navigation.push("Carrier")},
                 ]} />
                 <Gap h={12.5} />
             </ScrollView>

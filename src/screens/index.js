@@ -98,12 +98,13 @@ const Settings = ({navigation}) => {
 
 import DualSIM_Cellular from './DualSIM_Cellular';
 import SIMInfo_Settings from './DualSIM_Cellular/SIMInfo_Settings';
+import Carrier from './DualSIM_Cellular/Carrier';
 
 import OtherWirelessConnections from './OtherWirelessConnections';
 
 export {
     Settings,
 
-    DualSIM_Cellular, SIMInfo_Settings,
+    DualSIM_Cellular, SIMInfo_Settings, Carrier,
     OtherWirelessConnections,
 };
