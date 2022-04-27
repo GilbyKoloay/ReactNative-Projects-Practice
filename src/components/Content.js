@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
         borderColor: '#D1D1D1',
     },
     item: {
-        height: 47.5,
+        // height: 47.5,
+        paddingVertical: 10,
         paddingHorizontal: 15,
         justifyContent: 'center',
     },
@@ -41,6 +42,8 @@ const styles = StyleSheet.create({
         width: 27.5,
         marginRight: 10,
         borderRadius: 7.5,
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: (color),
     }),
     itemTitle: {
@@ -75,11 +78,7 @@ export default function Content({title=null, items=[{title: "<Content>"}]}) {
                     key,
                     icon=null,
                     title="<Item_Title>",
-                    switcH={
-                        use: false,
-                        onValueChange: null,
-                        value: null,
-                    },
+                    switcH=null,
                     text=null,
                     arrow=false,
                     onPress=null}, index) => {
@@ -88,11 +87,11 @@ export default function Content({title=null, items=[{title: "<Content>"}]}) {
                             <TouchableHighlight style={styles.item} underlayColor='#E4E4E4' onPress={onPress}>
                                 <View style={styles.itemWrap}>
                                     <View style={styles.itemLeft}>
-                                        {(icon !== null) && <View style={styles.icon(icon)}></View>}
+                                        {(icon !== null) && <View style={styles.icon(icon.color)}>{icon.icon}</View>}
                                         <Text style={styles.itemTitle}>{title}</Text>
                                     </View>
                                     <View style={styles.itemRight}>
-                                        {(switcH.use === true) && <Switch 
+                                        {(switcH !== null) && <Switch 
                                             thumbColor="#FFFFFF" 
                                             trackColor={{false: '#E0E0E0', true:'#2AC795'}} 
                                             onValueChange={switcH.onValueChange((switcH.value) ? false : true)}
