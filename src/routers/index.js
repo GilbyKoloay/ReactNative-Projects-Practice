@@ -5,6 +5,7 @@ import { Settings } from '../screens';
 import DualSIM_Cellular from './DualSIM_Cellular';
 import OtherWirelessConnections from './OtherWirelessConnections';
 import Notification_StatusBar from './Notification_StatusBar';
+import Display_Brightness from './Display_Brightness';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,11 @@ export default function Router() {
             <Stack.Screen
                 name="Notification & Status Bar"
                 component={Notification_StatusBar}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="Display & Brightness"
+                component={Display_Brightness}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>
