@@ -1,7 +1,11 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { DualSIM_Cellular as index, SIMInfo_Settings as SIS, Carrier as S } from '../screens';
+import {
+    DualSIM_Cellular as index,
+    SIMInfo_Settings as SIS,
+    Carrier as S
+} from '../screens';
 
 const Stack = createNativeStackNavigator();
 

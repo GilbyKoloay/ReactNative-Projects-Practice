@@ -94,7 +94,7 @@ export default function Content({title=null, items=[{title: "<Content>"}]}) {
                                         {(switcH !== null) && <Switch 
                                             thumbColor="#FFFFFF" 
                                             trackColor={{false: '#E0E0E0', true:'#2AC795'}} 
-                                            onValueChange={switcH.onValueChange((switcH.value) ? false : true)}
+                                            onValueChange={switcH.onValueChange(!switcH.value)}
                                             value={switcH.value}
                                         />}
                                         {(text !== null) && <Text style={styles.itemText}>{text}</Text>}

@@ -26,9 +26,6 @@ const styles = StyleSheet.create({
 
 const Settings = ({navigation}) => {
     const [airplaneMode, setAirplaneMode] = useState(false);
-    const changeAirplaneMode = (val) => {
-        setAirplaneMode(val);
-    }
 
     return(
         <View style={styles.screen}>
@@ -36,7 +33,7 @@ const Settings = ({navigation}) => {
             <ScrollView>
                 <Gap h={12.5} />
                 <Content items={[
-                    {key: 1, icon: {color: '#FBA64F', icon: <I_AM />}, title: "Airplane Mode", switcH: {onValueChange: () => changeAirplaneMode, value: airplaneMode}},
+                    {key: 1, icon: {color: '#FBA64F', icon: <I_AM />}, title: "Airplane Mode", switcH: {onValueChange: () => setAirplaneMode, value: airplaneMode}},
                     {key: 2, icon: {color: '#65E19F', icon: <I_DSC />}, title: "Dual SIM & Cellular", arrow: true, onPress: () => navigation.push("Dual SIM & Cellular")},
                     {key: 3, icon: {color: '#4DC5FD', icon: <I_WF />}, title: "Wi-Fi", text: "ZTE_2.4G_px6Ahp", arrow: true, onPress: () => console.log(`Wi-Fi`)},
                     {key: 4, icon: {color: '#55C8FE', icon: <I_Bl />}, title: "Bluetooth", text: "Off", arrow: true, onPress: () => {console.log(`Bluetooth`)}},
@@ -101,10 +98,11 @@ import SIMInfo_Settings from './DualSIM_Cellular/SIMInfo_Settings';
 import Carrier from './DualSIM_Cellular/Carrier';
 
 import OtherWirelessConnections from './OtherWirelessConnections';
+import PersonalHotspot from './OtherWirelessConnections/PersonalHotspot';
 
 export {
     Settings,
 
     DualSIM_Cellular, SIMInfo_Settings, Carrier,
-    OtherWirelessConnections,
+    OtherWirelessConnections, PersonalHotspot,
 };

@@ -11,9 +11,6 @@ const styles = StyleSheet.create({
 
 export default function Carrier({navigation}) {
     const [chooseAutomatically, setchooseAutomatically] = useState(false);
-    const changechooseAutomatically = (val) => {
-        setchooseAutomatically(val);
-    }
 
     return(
         <View style={styles.screen}>
@@ -21,7 +18,7 @@ export default function Carrier({navigation}) {
             <ScrollView>
                 <Gap h={12.5} />
                 <Content items={[
-                    {key: 1, title: "Choose Automatically", switcH: {onValueChange: () => changechooseAutomatically, value: chooseAutomatically}},
+                    {key: 1, title: "Choose Automatically", switcH: {onValueChange: () => setchooseAutomatically, value: chooseAutomatically}},
                 ]} />
                 <Gap h={12.5} />
             </ScrollView>

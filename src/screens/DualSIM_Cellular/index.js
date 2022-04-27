@@ -11,9 +11,6 @@ const styles = StyleSheet.create({
 
 export default function DualSIM_Cellular({navigation}) {
     const [mobileData, setMobileData] = useState(false);
-    const changeMobileData = (val) => {
-        setMobileData(val);
-    }
 
     return(
         <View style={styles.screen}>
