@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { Gap, Header, Content } from '../../components';
 

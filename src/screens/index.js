@@ -52,7 +52,7 @@ const Settings = ({navigation}) => {
                     {key: 2, icon: {color: '#57C9FE', icon: <I_S />}, title: "Security", arrow: true, onPress: () => navigation.push("Security")},
                     {key: 3, icon: {color: '#40D68B', icon: <I_Ba />}, title: "Battery", arrow: true, onPress: () => {console.log(`Battery`)}},
                     {key: 4, icon: {color: '#58CAFF'}, title: "Language & Region", arrow: true, onPress: () => navigation.push("Language & Region")},
-                    {key: 5, icon: {color: '#A4A9B2'}, title: "Additional Settings", arrow: true, onPress: () => {console.log(`Additional Settings`)}},
+                    {key: 5, icon: {color: '#A4A9B2'}, title: "Additional Settings", arrow: true, onPress: () => navigation.push("Additional Settings")},
                 ]} />
                 <Gap h={12.5} />
                 <Content items={[
@@ -118,6 +118,8 @@ import Battery from './Battery';
 
 import Language_Region from './Language_Region';
 
+import AdditionalSettings from './AdditionalSettings';
+
 export {
     Settings,
 
@@ -130,4 +132,5 @@ export {
     Security, Anti_Harassment_Fraud, BlockCalls, BlockMessages,
     Battery,
     Language_Region,
+    AdditionalSettings,
 };
