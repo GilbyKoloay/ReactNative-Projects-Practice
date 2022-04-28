@@ -18,7 +18,7 @@ export default function UserGuide({navigation}) {
                 <Content items={[
                     {key: 1, title: "Operation Skills", arrow: true, onPress: () => console.log(`Operation Skills`)},
                     {key: 2, title: "Troubleshooting", arrow: true, onPress: () => console.log(`Troubleshooting`)},
-                    {key: 3, title: "Product Security", arrow: true, onPress: () => console.log(`Product Security`)},
+                    {key: 3, title: "Product Security", arrow: true, onPress: () => navigation.push("Product Security")},
                     {key: 4, title: "After-Sales Service", arrow: true, onPress: () => navigation.push("After-Sales Service")},
                 ]} />
                 <Gap h={12.5} />

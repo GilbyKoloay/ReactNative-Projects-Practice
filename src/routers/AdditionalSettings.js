@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
     AdditionalSettings as index,
     UserGuide as UG,
+    ProductSecurity as PS,
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,11 @@ export default function Battery() {
             <Stack.Screen
                 name="User Guide"
                 component={UG}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="Product Security"
+                component={PS}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>
