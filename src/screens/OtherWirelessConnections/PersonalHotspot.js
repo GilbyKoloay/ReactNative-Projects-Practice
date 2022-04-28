@@ -14,7 +14,7 @@ export default function PersonalHotspot({navigation}) {
 
     return(
         <View style={styles.screen}>
-            <Header title="Personal Hotspot" back={["Back", () => navigation.goBack()]} />
+            <Header back={["Back", () => navigation.goBack()]} title="Personal Hotspot" />
             <ScrollView>
                 <Gap h={12.5} />
                 <Content items={[

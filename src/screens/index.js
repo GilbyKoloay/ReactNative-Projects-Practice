@@ -43,7 +43,7 @@ const Settings = ({navigation}) => {
                 <Content items={[
                     {key: 1, icon: {color: '#FC7565', icon: <I_NSB />}, title: "Notification & Status Bar", arrow: true, onPress: () => navigation.push("Notification & Status Bar")},
                     {key: 2, icon: {color: '#F9CC40', icon: <I_DB />}, title: "Display & Brightness", arrow: true, onPress: () => navigation.push("Display & Brightness")},
-                    {key: 3, icon: {color: '#8AA9FE', icon: <I_SV />}, title: "Sound & Vibration", arrow: true, onPress: () => {console.log(`Sound & Vibration`)}},
+                    {key: 3, icon: {color: '#8AA9FE', icon: <I_SV />}, title: "Sound & Vibration", arrow: true, onPress: () => navigation.push("Sound & Vibration")},
                     {key: 4, icon: {color: '#FC7565', icon: <I_QT />}, title: "Quiet Time", arrow: true, onPress: () => {console.log(`Quiet Time`)}},
                 ]} />
                 <Gap h={12.5} />
@@ -94,7 +94,7 @@ const Settings = ({navigation}) => {
 
 
 import DualSIM_Cellular from './DualSIM_Cellular';
-import SIMInfo_Settings from './DualSIM_Cellular/SIMInfo_Settings';
+import SIM1 from './DualSIM_Cellular/SIM1';
 import Carrier from './DualSIM_Cellular/Carrier';
 
 import OtherWirelessConnections from './OtherWirelessConnections';
@@ -105,11 +105,14 @@ import Notification_StatusBar from './Notification_StatusBar';
 import Display_Brightness from './Display_Brightness';
 import NightShield from './Display_Brightness/NightShield';
 
+import Sound_Vibration from './Sound_Vibration';
+
 export {
     Settings,
 
-    DualSIM_Cellular, SIMInfo_Settings, Carrier,
+    DualSIM_Cellular, SIM1, Carrier,
     OtherWirelessConnections, PersonalHotspot,
     Notification_StatusBar,
     Display_Brightness, NightShield,
+    Sound_Vibration,
 };

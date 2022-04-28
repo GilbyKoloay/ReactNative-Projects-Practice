@@ -14,11 +14,11 @@ export default function DualSIM_Cellular({navigation}) {
 
     return(
         <View style={styles.screen}>
-            <Header title="SIM Card & Cellular" back={["Settings", () => navigation.goBack()]} />
+            <Header back={["Settings", () => navigation.goBack()]} title="SIM Card & Cellular" />
             <ScrollView>
                 <Gap h={10} />
                 <Content title="SIM INFO & SETTINGS" items={[
-                    {key: 1, icon: {color: '#58CAFF'}, title: "SIM1", arrow: true, onPress: () => navigation.push("SIM Info & Settings")},
+                    {key: 1, icon: {color: '#58CAFF'}, title: "SIM1", arrow: true, onPress: () => navigation.push("SIM1")},
                 ]} />
                 <Gap h={10} />
                 <Content title="GENERAL SETTING" items={[

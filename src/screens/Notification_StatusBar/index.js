@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
 export default function Notification_StatusBar({navigation}) {
     const [batteryPercentage, setBatteryPercentage] = useState(true);
     const [showRealTimeNetworkSpeed, setShowRealTimeNetworkSpeed] = useState(true);
-    const [carrierInfo, setCarrierInfo] = useState(false);
+    // const [carrierInfo, setCarrierInfo] = useState(false);
     const [showDataUsageAtTheBottom, setShowDataUsageAtTheBottom] = useState(true);
     const [accessOnLockScreen, setAccessOnLockScreen] = useState(false);
     const [turnOnScreenForNotifications, setTurnOnScreenForNotifications] = useState(true);
 
     return(
         <View style={styles.screen}>
-            <Header title="SIM Card & Cellular" back={["Settings", () => navigation.goBack()]} />
+            <Header back={["Settings", () => navigation.goBack()]} title="Notification & Status Bar" />
             <ScrollView>
                 <Gap h={12.5} />
                 <Content items={[
@@ -29,7 +29,7 @@ export default function Notification_StatusBar({navigation}) {
                 <Content title="STATUS BAR" items={[
                     { key: 1, title: "Battery Percentage", switcH: {onValueChange: () => setBatteryPercentage, value: batteryPercentage}},
                     { key: 2, title: "Show Real Time Network Speed", switcH: {onValueChange: () => setShowRealTimeNetworkSpeed, value: showRealTimeNetworkSpeed}},
-                    { key: 3, title: "Carrier Info", switcH: {onValueChange: () => setCarrierInfo, value: carrierInfo}},
+                    { key: 3, title: "Carrier Info", switcH: {onValueChange: () => null, value: null}},
                 ]} />
                 <Gap h={10} />
                 <Content title="NOTIFICATION BAR" items={[

@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default function SIMInfo_Settings({navigation}) {
+export default function SIM1({navigation}) {
     const [enable, setEnable] = useState(false);
     const [DataRoaming, setDataRoaming] = useState(false);
 

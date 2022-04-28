@@ -10,13 +10,13 @@ const styles = StyleSheet.create({
 });
 
 export default function OtherWirelessConnections({navigation}) {
-    const [USBTethering, setUSBTethering] = useState(false);
+    // const [USBTethering, setUSBTethering] = useState(false);
     const [bluetoothTethering, setBluetoothTethering] = useState(false);
     const [DLNA, setDLNA] = useState(false);
 
     return(
         <View style={styles.screen}>
-            <Header title="SIM Card & Cellular" back={["Settings", () => navigation.goBack()]} />
+            <Header back={["Settings", () => navigation.goBack()]} title="Other Wireless Connections" />
             <ScrollView>
                 <Gap h={12.5} />
                 <Content items={[
@@ -25,7 +25,7 @@ export default function OtherWirelessConnections({navigation}) {
                 <Gap h={10} />
                 <Content title="TETHERING" items={[
                     { key: 1, title: "Personal Hotspot", arrow: true, onPress: () => navigation.push("Personal Hotspot")},
-                    { key: 2, title: "USB Tethering", switcH: {onValueChange: () => setUSBTethering, value: USBTethering}},
+                    { key: 2, title: "USB Tethering", switcH: {onValueChange: () => null, value: null}},
                     { key: 3, title: "Bluetooth Tethering", switcH: {onValueChange: () => setBluetoothTethering, value: bluetoothTethering}},
                 ]} />
                 <Gap h={10} />

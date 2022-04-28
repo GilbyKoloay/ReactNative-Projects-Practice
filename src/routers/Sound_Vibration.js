@@ -2,29 +2,17 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
-    DualSIM_Cellular as index,
-    SIM1 as S1,
-    Carrier as S
+    Sound_Vibration as index,
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
 
-export default function DualSIM_Cellular() {
+export default function Sound_Vibration() {
     return(
         <Stack.Navigator initialRouteName="index">
             <Stack.Screen
                 name="index"
                 component={index}
-                options={{headerShown: false}}
-            />
-            <Stack.Screen
-                name="SIM1"
-                component={S1}
-                options={{headerShown: false}}
-            />
-            <Stack.Screen
-                name="Carrier"
-                component={S}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>

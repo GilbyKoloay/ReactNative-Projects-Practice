@@ -6,6 +6,7 @@ import DualSIM_Cellular from './DualSIM_Cellular';
 import OtherWirelessConnections from './OtherWirelessConnections';
 import Notification_StatusBar from './Notification_StatusBar';
 import Display_Brightness from './Display_Brightness';
+import Sound_Vibration from './Sound_Vibration';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,11 @@ export default function Router() {
             <Stack.Screen
                 name="Display & Brightness"
                 component={Display_Brightness}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="Sound & Vibration"
+                component={Sound_Vibration}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>

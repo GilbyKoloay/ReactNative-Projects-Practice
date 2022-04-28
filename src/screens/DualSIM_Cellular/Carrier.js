@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 });
 
 export default function Carrier({navigation}) {
-    const [chooseAutomatically, setchooseAutomatically] = useState(false);
+    const [chooseAutomatically, setchooseAutomatically] = useState(true);
 
     return(
         <View style={styles.screen}>

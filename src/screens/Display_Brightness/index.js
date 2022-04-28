@@ -14,7 +14,7 @@ export default function Display_Brightness({navigation}) {
 
     return(
         <View style={styles.screen}>
-            <Header title="SIM Card & Cellular" back={["Settings", () => navigation.goBack()]} />
+            <Header back={["Settings", () => navigation.goBack()]} title="Display & Brightness" />
             <ScrollView>
                 <Gap h={12.5} />
                 <Content items={[
