@@ -9,6 +9,7 @@ import Display_Brightness from './Display_Brightness';
 import Sound_Vibration from './Sound_Vibration';
 import Quiet_Time from './Quiet_Time';
 import Security from './Security';
+import Language_Region from './Language_Region';
 
 const Stack = createNativeStackNavigator();
 
@@ -53,6 +54,11 @@ export default function Router() {
             <Stack.Screen
                 name="Security"
                 component={Security}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="Language Region"
+                component={Language_Region}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>

@@ -14,7 +14,7 @@ export default function BlockMessages({navigation}) {
 
     return(
         <View style={styles.screen}>
-            <Header back={["Security", () => navigation.goBack()]} title="Block Messages" />
+            <Header back={["Block", () => navigation.goBack()]} title="Block Messages" />
             <ScrollView>
                 <Gap h={12.5} />
                 <Content items={[

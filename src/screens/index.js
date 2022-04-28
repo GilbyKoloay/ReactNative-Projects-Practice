@@ -51,7 +51,7 @@ const Settings = ({navigation}) => {
                     {key: 1, icon: {color: '#40D68B', icon: <I_FP />}, title: "Face & Passcode", arrow: true, onPress: () => {console.log(`Face & Passcode`)}},
                     {key: 2, icon: {color: '#57C9FE', icon: <I_S />}, title: "Security", arrow: true, onPress: () => navigation.push("Security")},
                     {key: 3, icon: {color: '#40D68B', icon: <I_Ba />}, title: "Battery", arrow: true, onPress: () => {console.log(`Battery`)}},
-                    {key: 4, icon: {color: '#58CAFF'}, title: "Language & Region", arrow: true, onPress: () => {console.log(`Language & Region`)}},
+                    {key: 4, icon: {color: '#58CAFF'}, title: "Language & Region", arrow: true, onPress: () => navigation.push("Language & Region")},
                     {key: 5, icon: {color: '#A4A9B2'}, title: "Additional Settings", arrow: true, onPress: () => {console.log(`Additional Settings`)}},
                 ]} />
                 <Gap h={12.5} />
@@ -116,6 +116,8 @@ import BlockMessages from './Security/BlockMessages';
 
 import Battery from './Battery';
 
+import Language_Region from './Language_Region';
+
 export {
     Settings,
 
@@ -127,4 +129,5 @@ export {
     Quiet_Time,
     Security, Anti_Harassment_Fraud, BlockCalls, BlockMessages,
     Battery,
+    Language_Region,
 };
