@@ -8,6 +8,7 @@ import Notification_StatusBar from './Notification_StatusBar';
 import Display_Brightness from './Display_Brightness';
 import Sound_Vibration from './Sound_Vibration';
 import Quiet_Time from './Quiet_Time';
+import Security from './Security';
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +48,11 @@ export default function Router() {
             <Stack.Screen
                 name="Quiet Time"
                 component={Quiet_Time}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="Security"
+                component={Security}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>

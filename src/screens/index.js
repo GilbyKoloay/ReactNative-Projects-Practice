@@ -49,7 +49,7 @@ const Settings = ({navigation}) => {
                 <Gap h={12.5} />
                 <Content items={[
                     {key: 1, icon: {color: '#40D68B', icon: <I_FP />}, title: "Face & Passcode", arrow: true, onPress: () => {console.log(`Face & Passcode`)}},
-                    {key: 2, icon: {color: '#57C9FE', icon: <I_S />}, title: "Security", arrow: true, onPress: () => {console.log(`Security`)}},
+                    {key: 2, icon: {color: '#57C9FE', icon: <I_S />}, title: "Security", arrow: true, onPress: () => navigation.push("Security")},
                     {key: 3, icon: {color: '#40D68B', icon: <I_Ba />}, title: "Battery", arrow: true, onPress: () => {console.log(`Battery`)}},
                     {key: 4, icon: {color: '#58CAFF'}, title: "Language & Region", arrow: true, onPress: () => {console.log(`Language & Region`)}},
                     {key: 5, icon: {color: '#A4A9B2'}, title: "Additional Settings", arrow: true, onPress: () => {console.log(`Additional Settings`)}},
@@ -109,6 +109,9 @@ import Sound_Vibration from './Sound_Vibration';
 
 import Quiet_Time from './Quiet_Time';
 
+import Security from './Security';
+import Anti_Harassment_Fraud from './Security/Anti_Harassment_Fraud';
+
 export {
     Settings,
 
@@ -118,4 +121,5 @@ export {
     Display_Brightness, NightShield,
     Sound_Vibration,
     Quiet_Time,
+    Security, Anti_Harassment_Fraud,
 };
