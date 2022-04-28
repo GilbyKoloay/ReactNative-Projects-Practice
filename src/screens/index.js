@@ -112,6 +112,7 @@ import Quiet_Time from './Quiet_Time';
 import Security from './Security';
 import Anti_Harassment_Fraud from './Security/Anti_Harassment_Fraud';
 import BlockCalls from './Security/BlockCalls';
+import BlockMessages from './Security/BlockMessages';
 
 export {
     Settings,
@@ -122,5 +123,5 @@ export {
     Display_Brightness, NightShield,
     Sound_Vibration,
     Quiet_Time,
-    Security, Anti_Harassment_Fraud, BlockCalls,
+    Security, Anti_Harassment_Fraud, BlockCalls, BlockMessages,
 };

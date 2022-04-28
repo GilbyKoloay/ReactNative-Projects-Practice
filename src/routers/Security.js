@@ -5,6 +5,7 @@ import {
     Security as index,
     Anti_Harassment_Fraud as AHF,
     BlockCalls as BC,
+    BlockMessages as BM,
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -25,6 +26,11 @@ export default function Security() {
             <Stack.Screen
                 name="Block Calls"
                 component={BC}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="Block Messages"
+                component={BM}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>

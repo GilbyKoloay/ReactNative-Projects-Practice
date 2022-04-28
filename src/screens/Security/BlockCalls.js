@@ -17,7 +17,7 @@ export default function BlockCalls({navigation}) {
 
     return(
         <View style={styles.screen}>
-            <Header back={["Block", () => navigation.goBack()]} title="Block Calls" />
+            <Header back={["Block", () => navigation.goBack()]} title="Block" />
             <ScrollView>
                 <Gap h={12.5} />
                 <Content items={[
