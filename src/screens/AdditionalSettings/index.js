@@ -26,7 +26,7 @@ export default function AdditionalSettings({navigation}) {
                 <Gap h={12.5} />
                 <Content items={[
                     {key: 1, title: "Device ON/OFF Preset", arrow: true, onPress: () => console.log(`Device ON/OFF Preset`)},
-                    {key: 2, title: "Security & Privacy", arrow: true, onPress: () => console.log(`Security & Privacy`)},
+                    {key: 2, title: "Security & Privacy", arrow: true, onPress: () => navigation.push("Security & Privacy")},
                     {key: 3, title: "SIM Toolkit", arrow: true, onPress: () => console.log(`SIM Toolkit`)},
                     {key: 4, title: "Accessibility", arrow: true, onPress: () => console.log(`Accessibility`)},
                     {key: 5, title: "Developer Options", arrow: true, onPress: () => console.log(`Developer Options`)},
