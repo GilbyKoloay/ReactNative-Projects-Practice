@@ -21,7 +21,7 @@ export default function AdditionalSettings({navigation}) {
                     {key: 1, title: "Search", arrow: true, onPress: () => console.log(`Search`)},
                     {key: 2, title: "OPPO Cloud", arrow: true, onPress: () => console.log(`OPPO Cloud`)},
                     {key: 3, title: "Download Management", arrow: true, onPress: () => console.log(`Download Management`)},
-                    {key: 4, title: "User Guide", arrow: true, onPress: () => console.log(`User Guide`)},
+                    {key: 4, title: "User Guide", arrow: true, onPress: () => navigation.push("User Guide")},
                 ]} />
                 <Gap h={12.5} />
                 <Content items={[

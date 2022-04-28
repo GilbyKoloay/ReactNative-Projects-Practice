@@ -119,6 +119,7 @@ import Battery from './Battery';
 import Language_Region from './Language_Region';
 
 import AdditionalSettings from './AdditionalSettings';
+import UserGuide from './AdditionalSettings/UserGuide';
 
 export {
     Settings,
@@ -132,5 +133,5 @@ export {
     Security, Anti_Harassment_Fraud, BlockCalls, BlockMessages,
     Battery,
     Language_Region,
-    AdditionalSettings,
+    AdditionalSettings, UserGuide,
 };

@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
     AdditionalSettings as index,
+    UserGuide as UG,
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -13,6 +14,11 @@ export default function Battery() {
             <Stack.Screen
                 name="index"
                 component={index}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="User Guide"
+                component={UG}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>
