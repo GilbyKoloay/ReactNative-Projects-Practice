@@ -5,6 +5,7 @@ import {
     AdditionalSettings as index,
     UserGuide as UG,
     ProductSecurity as PS,
+    After_SalesService as ASS,
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -25,6 +26,11 @@ export default function Battery() {
             <Stack.Screen
                 name="Product Security"
                 component={PS}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="After-Sales Service"
+                component={ASS}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>

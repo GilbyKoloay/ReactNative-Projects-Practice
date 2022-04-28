@@ -121,6 +121,7 @@ import Language_Region from './Language_Region';
 import AdditionalSettings from './AdditionalSettings';
 import UserGuide from './AdditionalSettings/UserGuide';
 import ProductSecurity from './AdditionalSettings/ProductSecurity';
+import After_SalesService from './AdditionalSettings/After_SalesService';
 
 export {
     Settings,
@@ -134,5 +135,5 @@ export {
     Security, Anti_Harassment_Fraud, BlockCalls, BlockMessages,
     Battery,
     Language_Region,
-    AdditionalSettings, UserGuide, ProductSecurity,
+    AdditionalSettings, UserGuide, ProductSecurity, After_SalesService,
 };
