@@ -114,6 +114,8 @@ import Anti_Harassment_Fraud from './Security/Anti_Harassment_Fraud';
 import BlockCalls from './Security/BlockCalls';
 import BlockMessages from './Security/BlockMessages';
 
+import Battery from './Battery';
+
 export {
     Settings,
 
@@ -124,4 +126,5 @@ export {
     Sound_Vibration,
     Quiet_Time,
     Security, Anti_Harassment_Fraud, BlockCalls, BlockMessages,
+    Battery,
 };
