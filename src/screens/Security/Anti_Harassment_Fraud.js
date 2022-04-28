@@ -16,7 +16,7 @@ export default function Anti_Harassment_Fraud({navigation}) {
             <ScrollView>
                 <Gap h={12.5} />
                 <Content items={[
-                    {key: 1, title: "Block Calls", arrow: true, onPress: () => console.log(`Block Calls`)},
+                    {key: 1, title: "Block Calls", arrow: true, onPress: () => navigation.push("Block Calls")},
                     {key: 2, title: "Block Messages", arrow: true, onPress: () => console.log(`Block Messages`)},
                 ]} />
                 <Gap h={12.5} />
