@@ -44,6 +44,11 @@ export default function AdditionalSettings({navigation}) {
                     {key: 1, title: "Location Information", text: "Close", arrow: true, onPress: () => navigation.push("Location Information")},
                     {key: 2, title: 'Join "User Experience Project"', switcH: {onValueChange: () => setJoin_UserExperienceProject_, value: join_UserExperienceProject_}},
                 ]} />
+                <Gap h={10} />
+                <Content title="ADVANCED" items={[
+                    {key: 1, title: "Trusted Agents", arrow: true, onPress: () => console.log(`Trusted Agents`)},
+                    {key: 2, title: 'Screen Pinning', text: "Off", arrow: true, onPress: () => navigation.push("Screen Pinning")},
+                ]} />
                 <Gap h={12.5} />
             </ScrollView>
         </View>
