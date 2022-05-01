@@ -58,7 +58,7 @@ export default function Router() {
                 options={{headerShown: false}}
             />
             <Stack.Screen
-                name="Language Region"
+                name="Language & Region"
                 component={Language_Region}
                 options={{headerShown: false}}
             />

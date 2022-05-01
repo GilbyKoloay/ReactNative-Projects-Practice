@@ -22,7 +22,7 @@ export default function BlockMessages({navigation}) {
                 ]} />
                 <Gap h={12.5} />
                 <Content items={[
-                    {key: 1, title: "Block Messages From Unknown No.", switcH: {onValueChange: () => setBlockMessagesFromUnknownNo_}, value: blockMessagesFromUnknownNo_},
+                    {key: 1, title: "Block Messages From Unknown No.", switcH: {onValueChange: () => setBlockMessagesFromUnknownNo_, value: blockMessagesFromUnknownNo_}},
                 ]} />
                 <Gap h={12.5} />
             </ScrollView>

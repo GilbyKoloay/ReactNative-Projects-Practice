@@ -34,14 +34,14 @@ export default function AdditionalSettings({navigation}) {
                 ]} />
                 <Gap h={10} />
                 <Content title="CREDENTIAL STORAGE" items={[
-                    {key: 1, title: "Storage TYpe", text: "hardware Support"},
+                    {key: 1, title: "Storage Type", text: "hardware Support"},
                     {key: 2, title: "Trusted Certificates", arrow: true, onPress: () => console.log(`Trusted Certificates`)},
                     {key: 3, title: "Install Certificates from Storage", arrow: true, onPress: () => console.log(`Install Certificates from Storage`)},
-                    {key: 4, title: "Remove All User Certificates", arrow: true, onPress: () => console.log(`Remove All User Certificates`)},
+                    {key: 4, title: "Remove All User Certificates", onPress: () => console.log(`Remove All User Certificates`)},
                 ]} />
                 <Gap h={10} />
                 <Content title="PRIVACY" items={[
-                    {key: 1, title: "Location Information", text: "Close", arrow: true, onPress: () => console.log(`Location Information`)},
+                    {key: 1, title: "Location Information", text: "Close", arrow: true, onPress: () => navigation.push("Location Information")},
                     {key: 2, title: 'Join "User Experience Project"', switcH: {onValueChange: () => setJoin_UserExperienceProject_, value: join_UserExperienceProject_}},
                 ]} />
                 <Gap h={12.5} />

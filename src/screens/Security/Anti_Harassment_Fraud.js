@@ -21,7 +21,7 @@ export default function Anti_Harassment_Fraud({navigation}) {
                 ]} />
                 <Gap h={12.5} />
                 <Content items={[
-                    {key: 1, title: "Blacklist", text: "1 number(s)", arrow: true, onPress: () => console.log(`Permissions`)},
+                    {key: 1, title: "Blacklist", text: "1 number(s)", arrow: true, onPress: () => console.log(`Blacklist`)},
                 ]} />
                 <Gap h={12.5} />
             </ScrollView>

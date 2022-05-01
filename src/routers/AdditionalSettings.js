@@ -7,6 +7,7 @@ import {
     ProductSecurity as PS,
     After_SalesService as ASS,
     Security_Privacy as SP,
+    LocationInformation as LI,
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -37,6 +38,11 @@ export default function Battery() {
             <Stack.Screen
                 name="Security & Privacy"
                 component={SP}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="Location Information"
+                component={LI}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>
