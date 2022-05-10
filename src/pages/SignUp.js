@@ -7,12 +7,12 @@ import { DefaultProfile } from '../assets/images';
 import { Header, Gap, TextInput, Button } from '../components';
 
 const s = StyleSheet.create({
-    showMessage: {
-        message: "Error",
+    showMessage: (msg) => ({
+        message: msg,
         type: 'default',
         backgroundColor: '#D9435E',
         color: '#FFFFFF',
-    },
+    }),
 
     screen: {
         flex: 1,
@@ -62,19 +62,52 @@ export default function SignUp({navigation}) {
             maxWidth: 200,
             includeBase64: true,
         });
-        setImage((result.didCancel) ? DefaultProfile : result.assets[0].uri);
+
+        if(result.didCancel) {
+            setImage(DefaultProfile);
+            showMessage(s.showMessage("Gagal mengunggah gambar"));
+        }
+        else {
+            setImage({uri : result.assets[0].uri});
+        }
     }
 
     const nameChange = (val) => {
-        console.log(`nameChange = ${val}`);
+        setData({
+            name: val,
+            email: data.email,
+            password: data.password,
+        });
     }
 
     const emailChange = (val) => {
-        console.log(`nameEmail = ${val}`);
+        setData({
+            name: data.name,
+            email: val,
+            password: data.password,
+        });
     }
 
     const passwordChange = (val) => {
-        console.log(`namePassword = ${val}`);
+        setData({
+            name: data.name,
+            email: data.email,
+            password: val,
+        });
+    }
+
+    const continuePress = () => {
+        if(data.name === 'Jane Doe') {
+            showMessage(s.showMessage("Nama sudah terdaftar pada aplikasi"));
+        }
+        else {
+            if(data.email === 'jane@gmail.com') {
+                showMessage(s.showMessage("Email sudah terdaftar pada aplikasi"));
+            }
+            else {
+                navigation.reset({routes: [{name: 'HomeRouter'}]})
+            }
+        }
     }
 
     return(
@@ -87,13 +120,13 @@ export default function SignUp({navigation}) {
                     </TouchableOpacity>
                 </View>
                 <Gap h={15} />
-                <TextInput title="Full Name" placeholder="Type your full name" onChange={nameChange} />
+                <TextInput title="Full Name" placeholder="Type your full name" onChange={(val) => nameChange(val)} />
                 <Gap h={15} />
-                <TextInput title="Email Address" placeholder="Type your email address" onChange={emailChange} />
+                <TextInput title="Email Address" placeholder="Type your email address" onChange={(val) => emailChange(val)} />
                 <Gap h={15} />
-                <TextInput title="Password" placeholder="Type your password" secure={true} onPress={passwordChange} />
+                <TextInput title="Password" placeholder="Type your password" secure={true} onChange={(val) => passwordChange(val)} />
                 <Gap h={25} />
-                <Button text="Continue" onPress={() => navigation.reset({routes: [{name: 'HomeRouter'}]})} />
+                <Button text="Continue" onPress={() => continuePress()} />
             </View>
         </View>
     );
