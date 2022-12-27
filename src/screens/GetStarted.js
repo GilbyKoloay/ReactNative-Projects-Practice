@@ -16,8 +16,9 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 20,
+    paddingBottom: 100,
     backgroundColor: '#130B2B',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
   },
   image: {
     height: 250,

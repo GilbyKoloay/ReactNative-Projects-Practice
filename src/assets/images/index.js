@@ -1,6 +1,7 @@
 // images
 
 import Camera from './Camera.png';
+import Cinema from './Cinema.png';
 
 // movies
 import Avatar from './movies/Avatar.png';
@@ -10,6 +11,7 @@ import WakandaForever from './movies/Wakanda Forever.png';
 
 export {
     Camera,
+    Cinema,
 
     // movies
     Avatar,

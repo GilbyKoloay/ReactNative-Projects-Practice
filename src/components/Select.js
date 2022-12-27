@@ -32,7 +32,7 @@ export default function Select({
         style={{backgroundColor: '#F34C30'}} 
         listParentContainerStyle={{backgroundColor: '#F34C30'}} 
         dropDownContainerStyle={{backgroundColor: '#DA004E'}} 
-        selectedItemContainerStyle={{backgroundColor: '#E7263F'}}
+        selectedItemContainerStyle={{backgroundColor: '#E7263F'}} 
       />
     </View>
   );
