@@ -3,11 +3,13 @@
 import Button from './Button';
 import Gap from './Gap';
 import Select from './Select';
-import Input from './Input';
+import InputBig from './InputBig';
+import InputSmall from './InputSmall';
 
 export {
   Button,
   Gap,
   Select,
-  Input,
+  InputBig,
+  InputSmall,
 };

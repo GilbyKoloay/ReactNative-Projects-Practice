@@ -34,6 +34,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   textInput: {
+    margin: 0,
+    padding: 0,
     fontFamily: 'Poppins-Light',
     fontSize: 17.5,
     color: 'white',
@@ -42,10 +44,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Input({
-  title = '<Input Title>',
+export default function InputBig({
+  title = '<InputBig Title>',
   text = '',
-  placeholder = '<Input Placeholder>',
+  placeholder = '<InputBig Placeholder>',
   onChangeText = () => console.log(`onChange is undefined`),
   secure = false
 }) {

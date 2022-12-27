@@ -4,7 +4,7 @@ import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 // components
 import {
   Gap,
-  Input,
+  InputBig,
   Button,
 } from '../components';
 
@@ -58,9 +58,9 @@ export default function SignIn({navigation}) {
         <Gap h={25} />
         <Text style={styles.text(20)}>Enter your data</Text>
         <Gap h={30} />
-        <Input title='Username' placeholder='Enter your username' onChangeText={setUsername} />
+        <InputBig title='Username' placeholder='Enter your username' onChangeText={setUsername} />
         <Gap h={30} />
-        <Input 
+        <InputBig 
           title='Password' 
           placeholder='Enter your password' 
           text='Forgot password?' 
