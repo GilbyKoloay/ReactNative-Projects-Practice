@@ -24,7 +24,7 @@ export default function Button({
   onPress = console.log('onPress is undefined'),
 }) {
   return(
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} activeOpacity={0.75}>
       <LinearGradient 
         style={styles.button} 
         colors={['#F34C30','#DA004E']} 
