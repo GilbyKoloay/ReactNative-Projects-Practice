@@ -1,7 +1,7 @@
 // icons
 
 import ArrowLeft from './ArrowLeft.svg';
-import Boxes from '/Boxes.svg';
+import Boxes from './Boxes.svg';
 import Cart from './Cart.svg';
 import Chair from './Chair.svg';
 import Eye from './Eye.svg';

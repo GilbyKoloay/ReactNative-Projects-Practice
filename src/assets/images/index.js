@@ -10,12 +10,12 @@ import BlackAdam from './movies/Black Adam.png';
 import WakandaForever from './movies/Wakanda Forever.png';
 
 export {
-    Camera,
-    Cinema,
+  Camera,
+  Cinema,
 
-    // movies
-    Avatar,
-    AvatarWp,
-    BlackAdam,
-    WakandaForever,
+  // movies
+  Avatar,
+  AvatarWp,
+  BlackAdam,
+  WakandaForever,
 };
