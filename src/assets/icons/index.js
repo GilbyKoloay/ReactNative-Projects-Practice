@@ -9,6 +9,7 @@ import Home from './Home.svg';
 import Person from './Person.svg';
 import Pinpoint from './Pinpoint.svg';
 import Ticket from './Ticket.svg';
+import Search from './Search.svg';
 
 export {
   ArrowLeft,
@@ -20,4 +21,5 @@ export {
   Person,
   Pinpoint,
   Ticket,
+  Search,
 };
