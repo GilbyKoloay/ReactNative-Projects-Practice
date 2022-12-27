@@ -21,10 +21,10 @@ const styles = StyleSheet.create({
 
 export default function Button({
   title = '<Button Text>',
-  onPress = console.log('onPress is undefined'),
+  onPress = () => console.log('onPress is undefined'),
 }) {
   return(
-    <TouchableOpacity onPress={onPress} activeOpacity={0.75}>
+    <TouchableOpacity onPress={() => onPress()} activeOpacity={0.75}>
       <LinearGradient 
         style={styles.button} 
         colors={['#F34C30','#DA004E']} 
