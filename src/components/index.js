@@ -1,11 +1,12 @@
 // components
-
-import TextInput from './TextInput';
 import Gap from './Gap';
+import TextInput from './TextInput';
 import Button from './Button';
+import Header from './Header';
 
 export {
-    TextInput,
-    Gap,
-    Button,
+    Gap, 
+    TextInput, 
+    Button, 
+    Header
 };

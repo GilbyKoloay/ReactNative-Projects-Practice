@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.batu_angus",
+    package = "com.happybouquet",
 )
 
 android_resource(
     name = "res",
-    package = "com.batu_angus",
+    package = "com.happybouquet",
     res = "src/main/res",
 )
 

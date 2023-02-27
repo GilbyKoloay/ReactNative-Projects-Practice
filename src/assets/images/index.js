@@ -1,17 +1,14 @@
 // images
-
-import Logo from './Logo.png';
-import ProfileImage from './ProfileImage.jpeg';
-import Dana from './Dana.png';
-import KartuKredit from './KartuKredit.png';
-import Ovo from './Ovo.png';
-import ShopeePay from './ShopeePay.png';
+import DefaultImage from './DefaultImage.png';
+import BouquetCharacter from './BouquetCharacter.png';
+import BouquetFlower from './BouquetFlower.png';
+import BouquetMoney from './BouquetMoney.png';
+import MinnieMouse from './MinnieMouse.png';
 
 export {
-    Logo,
-    ProfileImage,
-    Dana,
-    KartuKredit,
-    Ovo,
-    ShopeePay,
+    DefaultImage, 
+    BouquetCharacter, 
+    BouquetFlower, 
+    BouquetMoney, 
+    MinnieMouse
 };
