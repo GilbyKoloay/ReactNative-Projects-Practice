@@ -1,5 +1,9 @@
 # Mobile Applications using React Native
 
-Feel free to give suggestions.
 
-Phone used: Oppo A83 (720 x 1400 px)
+
+## This project is developed using
+
+JDK: 2023-01-17 Java SDK "19.0.2" 2023-01-17
+
+Gradle: 7.6
