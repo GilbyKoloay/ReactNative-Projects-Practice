@@ -5,7 +5,8 @@ import Gopay from './gopay.png';
 import LPG from './lpg.png';
 import OVO from './ovo.png';
 import TitleBG from './titleBG.png';
-import TitleOAS from './titleOAS.png';
+import TitleOASDark from './titleOASDark.png';
+import TitleOASLight from './titleOASLight.png';
 
 export {
   Gallon,
@@ -13,5 +14,6 @@ export {
   LPG,
   OVO,
   TitleBG,
-  TitleOAS
+  TitleOASDark,
+  TitleOASLight
 };
