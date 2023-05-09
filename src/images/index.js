@@ -1,6 +1,7 @@
 // images
 
-import BgCircle from './BgCircle.png';
+import BgCircle1 from './BgCircle1.png';
+import BgCircle2 from './BgCircle2.png';
 import BgRectangle from './BgRectangle.png';
 import Blanket from './Blanket.png';
 import CleaningTools from './CleaningTools.png';
@@ -15,7 +16,8 @@ import WashingMachine from './WashingMachine.png';
 import Woman from './Woman.png';
 
 export {
-  BgCircle,
+  BgCircle1,
+  BgCircle2,
   BgRectangle,
   Blanket,
   CleaningTools,
