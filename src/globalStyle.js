@@ -11,10 +11,15 @@ export default StyleSheet.create({
 
   screenWrapper: {
     flex: 1,
+    backgroundColor: '#F7FAFF',
+    
     justifyContent: 'space-between'
   },
   screen: {
-    padding: 20
+    marginBottom: 320,
+
+    padding: 20,
+    paddingBottom: 0
   },
 
   circle: {

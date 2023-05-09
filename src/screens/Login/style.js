@@ -5,6 +5,13 @@ import globalStyle from '../../globalStyle';
 
 
 export default StyleSheet.create({
+  screen: {
+    marginBottom: 40,
+    backgroundColor: '#F7FAFF',
+
+    padding: 20
+  },
+
   header: {
     position: 'absolute',
     left: 0,
@@ -32,9 +39,10 @@ export default StyleSheet.create({
   },
 
   form: {
-    marginTop: 26,
+    marginTop: 50,
 
     padding: 16,
+    paddingTop: 50,
     alignItems: 'center'
   },
 
