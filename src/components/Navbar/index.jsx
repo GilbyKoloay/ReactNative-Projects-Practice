@@ -27,7 +27,7 @@ export default function Navbar({ current=null, navigation }) {
   }
 
   function personOnPress() {
-    navigation.push('Person');
+    navigation.push('Account');
   }
 
 

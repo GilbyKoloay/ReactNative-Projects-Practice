@@ -1,8 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-// images
-import { BgRectangle, BgCircle } from '../../images';
-
 
 
 export default StyleSheet.create({
@@ -12,12 +9,12 @@ export default StyleSheet.create({
   }),
   rectangle: type => ({
     position: 'absolute',
-    top: (type === 'tertiary') ? 150 : 0,
+    top: (type === 'tertiary') ? 176 : 0,
     borderRadius: 30
   }),
   circle: type => ({
     position: 'absolute',
-    top: (type === 'tertiary') ? 150 : 0,
+    top: (type === 'tertiary') ? 176 : 0,
     left: (type === 'tertiary') ? 200 : 0,
     transform: [{scaleX: (type === 'tertiary') ? -1 : 1}]
   })

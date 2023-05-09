@@ -4,12 +4,19 @@ import { View, Text } from 'react-native';
 import globalStyle from '../../globalStyle'; // global
 import style from './style'; // local
 
+// components
+import { Navbar } from '../../components';
 
 
-export default function Account() {
+
+export default function Account({ navigation }) {
   return (
-    <View>
-      <Text>Account</Text>
+    <View style={globalStyle.screenWrapper}>
+      <View style={globalStyle.screen}>
+
+      </View>
+
+      <Navbar navigation={navigation} />
     </View>
   );
 };
