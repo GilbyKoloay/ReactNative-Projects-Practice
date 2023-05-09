@@ -38,6 +38,7 @@ export default function() {
 
       <Text style={[styles.text, {marginTop: 24, marginBottom: 8}]}>Branches: </Text>
       <Text style={styles.text}>BatuAngus</Text>
+      <Text style={styles.text}>Bogas</Text>
       <Text style={styles.text}>Ex9</Text>
       <Text style={styles.text}>HappyBouquet</Text>
       <Text style={styles.text}>MoneyTracker</Text>
