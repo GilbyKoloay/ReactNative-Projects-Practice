@@ -5,7 +5,7 @@ import style from './style'; // local
 
 
 
-export default function Input({ placeholder='<placeholder>', value, onChangeText }) {
+export default function Input({ placeholder='<placeholder>', value, onChangeText, hide=false }) {
   return (
     <TextInput
       style={style.component}
@@ -13,6 +13,7 @@ export default function Input({ placeholder='<placeholder>', value, onChangeText
       placeholderTextColor='#FFFFFF'
       value={value}
       onChangeText={value => onChangeText(value)}
+      secureTextEntry={hide}
     />
   );
 };

@@ -38,7 +38,12 @@ export default function Login({ navigation }) {
       <Gap h={12} />
       <Input placeholder='username' value={username} onChangeText={value => setUsername(value)} />
       <Gap h={12} />
-      <Input placeholder='password' value={password} onChangeText={value => setPassword(value)} />
+      <Input
+        placeholder='password'
+        value={password}
+        onChangeText={value => setPassword(value)}
+        hide={true}
+      />
       <Gap h={36} />
       <Button text='LOGIN' onPress={loginOnPress} color={(theme === 'dark') ? 'primary' : 'secondary'} />
       <Gap h={10} />
