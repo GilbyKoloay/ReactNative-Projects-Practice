@@ -12,7 +12,7 @@ import Shirt from './Shirt.png';
 import TShirt from './T-Shirt.png';
 import Trouser from './Trouser.png';
 import WashingMachine from './Washing Machine.png';
-import Woman from './Woman';
+import Woman from './Woman.png';
 
 export {
   BgCircle,

@@ -12,7 +12,7 @@ import { AppLogo } from '../../icons'
 export default function Splash({ navigation }) {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('Home');
+      navigation.replace('Login');
     }, 1000);
   }, []);
 

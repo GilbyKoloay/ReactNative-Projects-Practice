@@ -7,6 +7,7 @@ import Calendar from './Calendar.svg';
 import ChatBg from './Chat Bg.svg';
 import ChatSm from './Chat Sm.svg';
 import Facebook from './Facebook.svg';
+import Google from './Google.svg';
 import HeartBlue from './Heart Blue.svg';
 import HeartWhite from './Heart White.svg';
 import Home from './Home.svg';
@@ -23,6 +24,7 @@ export {
   ChatBg,
   ChatSm,
   Facebook,
+  Google,
   HeartBlue,
   HeartWhite,
   Home,
