@@ -11,6 +11,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between'
   },
   screen: {
-    flex: 1
+    flex: 1,
+    paddingBottom: 22
   }
 });
