@@ -75,7 +75,7 @@ export default function Explore({ navigation }) {
     <View style={globalStyle.screenWrapper}>
       <View style={globalStyle.screen}>
         <View style={style.header}>
-          <BackButton onPress={() => navigation.pop()} label='Explore' />
+          <BackButton onPress={() => navigation.replace('Home')} label='Explore' />
           <Image source={Cat} style={style.headerImage} />
         </View>
 

@@ -19,7 +19,7 @@ export default function Login({ navigation }) {
 
 
   function loginOnPress() {
-    navigation.navigate('Home');
+    navigation.replace('Home');
   }
 
   function noAccountOnPress() {

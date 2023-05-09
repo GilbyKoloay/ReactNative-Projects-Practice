@@ -3,7 +3,6 @@
 import Account from './account.svg';
 import AccountSelected from './accountSelected.svg';
 import ArrowLeft from './arrowLeft.svg';
-import Card from './card.svg';
 import Cart from './cart.svg';
 import CartSelected from './cartSelected.svg';
 import Decrease from './decrease.svg';
@@ -24,7 +23,6 @@ export {
   Account,
   AccountSelected,
   ArrowLeft,
-  Card,
   Cart,
   CartSelected,
   Decrease,
