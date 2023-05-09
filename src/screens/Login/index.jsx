@@ -36,9 +36,9 @@ export default function Login({ navigation }) {
     <View style={[globalStyle.screen, style.screen((theme === 'dark') ? '#23272A' : (theme === 'light') && '#F8F8F9')]}>
       <Title theme={theme} />
       <Gap h={12} />
-      <Input placeholder='username' value={username} onChange={value => setUsername(value)} />
+      <Input placeholder='username' value={username} onChangeText={value => setUsername(value)} />
       <Gap h={12} />
-      <Input placeholder='password' value={password} onChange={value => setPassword(value)} />
+      <Input placeholder='password' value={password} onChangeText={value => setPassword(value)} />
       <Gap h={36} />
       <Button text='LOGIN' onPress={loginOnPress} color={(theme === 'dark') ? 'primary' : 'secondary'} />
       <Gap h={10} />

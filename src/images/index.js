@@ -1,5 +1,6 @@
 // images
 
+import Cat from './cat.png';
 import Gallon from './gallon.png';
 import Gopay from './gopay.png';
 import LPG from './lpg.png';
@@ -9,6 +10,7 @@ import TitleOASDark from './titleOASDark.png';
 import TitleOASLight from './titleOASLight.png';
 
 export {
+  Cat,
   Gallon,
   Gopay,
   LPG,

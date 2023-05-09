@@ -4,7 +4,7 @@ import Gap from './Gap';
 import Title from './Title';
 import Button from './Button';
 import Search from './Search';
-import Navbar from './NavBar';
+import NavBar from './NavBar';
 import BackButton from './BackButton';
 
 export {
@@ -12,6 +12,6 @@ export {
   Title,
   Button,
   Search,
-  Navbar,
+  NavBar,
   BackButton
 };
