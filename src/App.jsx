@@ -45,6 +45,7 @@ export default function() {
       <Text style={styles.text}>MovieTicketBookingApp_MVladimirovna</Text>
       <Text style={styles.text}>Settings</Text>
       <Text style={styles.text}>SignInOne</Text>
+      <Text style={styles.text}>TheLaundry</Text>
       <Text style={styles.text}>WhatsApp</Text>
 
       <Text style={[styles.text, {marginTop: 24, fontStyle: 'italic'}]}>e.g. <Text style={{fontWeight: 'bold', fontStyle: 'italic'}}>git checkout Settings</Text></Text>
