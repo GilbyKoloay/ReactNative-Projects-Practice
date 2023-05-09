@@ -3,10 +3,8 @@ import { StyleSheet } from 'react-native';
 
 
 export default StyleSheet.create({
-  screenWrapper: {
-    
-  },
-  screen: {
-    
+  color: {
+    primary: '#00FFCA',
+    secondary: '#0A4D68'
   }
 });
