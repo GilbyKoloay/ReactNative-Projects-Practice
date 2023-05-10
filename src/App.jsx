@@ -42,6 +42,7 @@ export default function() {
       <Text style={styles.text}>Ex9</Text>
       <Text style={styles.text}>HappyBouquet</Text>
       <Text style={styles.text}>MoneyTracker</Text>
+      <Text style={styles.text}>MovieHub</Text>
       <Text style={styles.text}>MovieTicketBookingApp_MVladimirovna</Text>
       <Text style={styles.text}>Settings</Text>
       <Text style={styles.text}>SignInOne</Text>
