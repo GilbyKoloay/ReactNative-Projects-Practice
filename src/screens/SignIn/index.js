@@ -3,7 +3,6 @@ import { View } from 'react-native';
 
 // styles
 import globalStyle from '../../globalStyle';
-import style from './style.js';
 
 // components
 import {
@@ -28,11 +27,12 @@ export default function SignIn({ navigation }) {
   }
   
   function signInOnPress() {
-    console.log('signInOnPress');
+    console.log(`Email Address = ${emailAddress} | Password = ${password}`);
+    navigation.replace('Home');
   }
 
   function createNewAccountOnPress() {
-    console.log('createNewAccountOnPress');
+    navigation.push('SignUp');
   }
 
 

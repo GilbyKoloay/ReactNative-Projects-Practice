@@ -7,6 +7,7 @@ import style from './style.js';
 
 export default function Input({
   label='<input label>',
+  type='default',
   placeholder='<input placeholder>',
   value='<input value>',
   onChangeText=() => console.log('<input onChangeText>'),
@@ -18,6 +19,7 @@ export default function Input({
       <Text style={style.label(isError)}>{label}</Text>
       <TextInput
         style={style.textInput(isError)}
+        keyboardType={type}
         placeholder={placeholder}
         placeholderTextColor='#8D92A3'
         value={value}

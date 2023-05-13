@@ -5,7 +5,7 @@ import globalStyle from '../../globalStyle';
 
 export default StyleSheet.create({
   label: isError => ({
-    marginBottom: 8,
+    marginBottom: 6,
 
     fontWeight: '400',
     fontSize: 16,
@@ -17,7 +17,7 @@ export default StyleSheet.create({
     borderRadius: 8,
     borderColor: (!isError) ? globalStyle.color.black : '#D9435E',
     
-    padding: 12,
+    padding: 10,
     fontWeight: '400',
     fontSize: 14,
     color: (!isError) ? globalStyle.color.black : '#D9435E'

@@ -14,7 +14,7 @@ import { ArrowLeft } from '../../assets/icons/index.js';
 
 
 export default function Header({
-  icon=false,
+  useIcon=false,
   title='<header title>',
   titleOnPress=() => console.log('<header titleOnPress>'),
   image=null,
@@ -23,7 +23,7 @@ export default function Header({
   return (
     <View style={style.component}>
       <TouchableOpacity style={style.titleContainer} onPress={titleOnPress} activeOpacity={0.5}>
-        {(icon) && <ArrowLeft style={style.icon} />}
+        {(useIcon) && <ArrowLeft style={style.icon} />}
         <Text style={style.title}>{title}</Text>
       </TouchableOpacity>
 
