@@ -1,11 +1,9 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 
 
-export default function Gap() {
+export default function Gap({ h=0, w=0}) {
   return (
-    <View style={globalStyle.component}>
-      <Text>Gap</Text>
-    </View>
+    <View style={{height: h, width: w}} />
   );
 };
