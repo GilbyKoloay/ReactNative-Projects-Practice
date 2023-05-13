@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { View, Image, Text } from 'react-native';
 
 // styles
-import globalStyle from '../../globalStyle';
 import style from './style.js';
 
 // images
@@ -20,7 +19,7 @@ export default function Splash({ navigation }) {
 
 
   return (
-    <View style={[globalStyle.screen, style.screen]}>
+    <View style={style.screen}>
       <Image source={yUKlari} />
       <Text style={style.title}>yUKlari</Text>
     </View>

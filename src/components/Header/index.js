@@ -1,14 +1,37 @@
-import { View, Text } from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  Image
+} from 'react-native';
 
 // styles
 import style from './style.js';
 
+// icons
+import { ArrowLeft } from '../../assets/icons/index.js';
 
 
-export default function Header() {
+
+export default function Header({
+  icon=false,
+  title='<header title>',
+  titleOnPress=() => console.log('<header titleOnPress>'),
+  image=null,
+  imageOnPress=() => console.log('<header imageOnPress>')
+}) {
   return (
-    <View style={globalStyle.component}>
-      <Text>Header</Text>
+    <View style={style.component}>
+      <TouchableOpacity style={style.titleContainer} onPress={titleOnPress} activeOpacity={0.5}>
+        {(icon) && <ArrowLeft style={style.icon} />}
+        <Text style={style.title}>{title}</Text>
+      </TouchableOpacity>
+
+      {(image) && (
+        <TouchableOpacity style={style.imageContainer} onPress={imageOnPress} activeOpacity={0.5}>
+          <Image style={style.image} source={image} />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

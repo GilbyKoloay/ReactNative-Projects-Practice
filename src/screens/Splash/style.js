@@ -18,6 +18,6 @@ export default StyleSheet.create({
     fontWeight: '500',
     fontStyle: 'italic',
     fontSize: 36,
-    color: globalStyle.color.textBlack
+    color: globalStyle.color.black
   }
 });
