@@ -41,10 +41,10 @@ export default function SignUp({ navigation }) {
 
 
   return (
-    <View>
+    <View style={globalStyle.screenWrapper}>
       <Header useIcon={true} title='Kembali' titleOnPress={kembaliOnPress} />
       <View style={globalStyle.screen}>
-        <TouchableOpacity style={style.addPhotoContainer}>
+        <TouchableOpacity style={style.addPhotoWrapper}>
           <View style={style.addPhoto} onPress={addPhotoOnPress} activeOpacity={0.5}>
             <Text style={style.addPhotoText}>Add Photo</Text>
           </View>

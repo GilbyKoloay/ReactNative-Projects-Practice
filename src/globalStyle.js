@@ -8,7 +8,12 @@ export default StyleSheet.create({
     black: '#020202'
   },
 
+  screenWrapper: {
+    flex: 1
+  },
   screen: {
+    flex: 1,
+
     paddingVertical: 28,
     paddingHorizontal: 24
   }

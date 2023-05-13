@@ -4,12 +4,14 @@ import Gap from './Gap';
 import Header from './Header';
 import Input from './Input';
 import Button from './Button';
-import HorizontalLine from './HorizontalLine';
+import MainValue from './MainValue';
+import Share from './Share';
 
 export {
   Gap,
   Header,
   Input,
   Button,
-  HorizontalLine
+  MainValue,
+  Share
 };

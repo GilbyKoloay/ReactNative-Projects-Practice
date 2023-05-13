@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 
 export default StyleSheet.create({
-  addPhotoContainer: {
+  addPhotoWrapper: {
     alignSelf: 'center',
     height: 110,
     width: 110,

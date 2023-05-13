@@ -38,7 +38,7 @@ export default function SignIn({ navigation }) {
 
 
   return (
-    <View>
+    <View style={globalStyle.screenWrapper}>
       <Header title='Exit' titleOnPress={exitOnPress} />
       <View style={globalStyle.screen}>
         <Input

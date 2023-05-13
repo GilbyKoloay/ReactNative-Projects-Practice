@@ -22,13 +22,13 @@ export default function Header({
 }) {
   return (
     <View style={style.component}>
-      <TouchableOpacity style={style.titleContainer} onPress={titleOnPress} activeOpacity={0.5}>
+      <TouchableOpacity style={style.titleWrapper} onPress={titleOnPress} activeOpacity={0.5}>
         {(useIcon) && <ArrowLeft style={style.icon} />}
         <Text style={style.title}>{title}</Text>
       </TouchableOpacity>
 
       {(image) && (
-        <TouchableOpacity style={style.imageContainer} onPress={imageOnPress} activeOpacity={0.5}>
+        <TouchableOpacity style={style.imageWrapper} onPress={imageOnPress} activeOpacity={0.5}>
           <Image style={style.image} source={image} />
         </TouchableOpacity>
       )}

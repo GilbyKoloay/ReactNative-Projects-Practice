@@ -14,7 +14,7 @@ export default StyleSheet.create({
     paddingHorizontal: 24,
   },
 
-  titleContainer: {
+  titleWrapper: {
     height: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -30,7 +30,7 @@ export default StyleSheet.create({
     color: globalStyle.color.black
   },
 
-  imageContainer: {
+  imageWrapper: {
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center'
