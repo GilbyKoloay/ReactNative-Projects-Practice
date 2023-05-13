@@ -4,7 +4,8 @@ import { View, Text } from 'react-native';
 import style from './style.js';
 
 // components
-import { Button, Gap } from '../index.js';
+import Button from '../Button/index.js';
+import Gap from '../Gap/index.js';
 
 
 
@@ -13,8 +14,8 @@ export default function Share({ items }) {
     <View style={style.component}>
       <Text style={style.title}>Share</Text>
       {items.map((item, index) => (
-        <View>
-          <Button key={index} label={item.label} onPress={item.onPress} />
+        <View key={index}>
+          <Button label={item.label} onPress={item.onPress} />
           {(items.length !== index + 1) && <Gap h={18} />}
         </View>
       ))}

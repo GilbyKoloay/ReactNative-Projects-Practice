@@ -17,11 +17,11 @@ import {
 
 export default function SignUp({ navigation }) {
   const [fullName, setFullName] = useState('');
-  const [fullNameError, setFullNameError] = useState(false);
+  const [isFullNameError, setIsFullNameError] = useState(true);
   const [emailAddress, setEmailAddress] = useState('');
-  const [emailAddressError, setEmailAddressError] = useState(false);
+  const [isEmailAddressError, setIsEmailAddressError] = useState(true);
   const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState(false);
+  const [isPasswordError, setIsPasswordError] = useState(true);
 
 
 
@@ -33,9 +33,30 @@ export default function SignUp({ navigation }) {
     console.log('addPhotoOnPress');
   }
 
+  function fullNameOnChangeText(thisFullName) {
+    setFullName(thisFullName);
+
+    if(thisFullName === '') setIsFullNameError(true);
+    else setIsFullNameError(false);
+  }
+
+  function emailAddressOnChangeText(thisEmailAddress) {
+    setEmailAddress(thisEmailAddress);
+
+    if(thisEmailAddress === '') setIsEmailAddressError(true);
+    else setIsEmailAddressError(false);
+  }
+  
+  function passwordOnChangeText(thisPassword) {
+    setPassword(thisPassword);
+
+    if(thisPassword === '') setIsPasswordError(true);
+    else setIsPasswordError(false);
+  }
+
   function signUpOnPress() {
     console.log(`Full Name = ${fullName} | Email Address = ${emailAddress} | Password = ${password}`);
-    navigation.replace('Home');
+    ((!isFullNameError) && (!isEmailAddressError) && (!isPasswordError)) && navigation.replace('Home');
   }
 
 
@@ -55,8 +76,8 @@ export default function SignUp({ navigation }) {
           label='Full Name'
           placeholder='Type your full name'
           value={fullName}
-          onChangeText={value => setFullName(value)}
-          isError={fullNameError}
+          onChangeText={value => fullNameOnChangeText(value)}
+          isError={isFullNameError}
         />
         <Gap h={16} />
         <Input
@@ -64,16 +85,16 @@ export default function SignUp({ navigation }) {
           type='email-address'
           placeholder='Type your email address'
           value={emailAddress}
-          onChangeText={value => setEmailAddress(value)}
-          isError={emailAddressError}
+          onChangeText={value => emailAddressOnChangeText(value)}
+          isError={isEmailAddressError}
         />
         <Gap h={16} />
         <Input
           label='Password'
           placeholder='Type your password'
           value={password}
-          onChangeText={value => setPassword(value)}
-          isError={passwordError}
+          onChangeText={value => passwordOnChangeText(value)}
+          isError={isPasswordError}
           hideText={true}
         />
 

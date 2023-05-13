@@ -16,19 +16,33 @@ import {
 
 export default function SignIn({ navigation }) {
   const [emailAddress, setEmailAddress] = useState('');
-  const [emailAddressError, setEmailAddressError] = useState(false);
+  const [isEmailAddressError, setIsEmailAddressError] = useState(true);
   const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState(false);
+  const [isPasswordError, setIsPasswordError] = useState(true);
 
 
 
   function exitOnPress() {
     console.log('exitOnPress');
   }
+
+  function emailAddressOnChangeText(thisEmailAddress) {
+    setEmailAddress(thisEmailAddress);
+
+    if(thisEmailAddress === '') setIsEmailAddressError(true);
+    else setIsEmailAddressError(false);
+  }
   
+  function passwordOnChangeText(thisPassword) {
+    setPassword(thisPassword);
+
+    if(thisPassword === '') setIsPasswordError(true);
+    else setIsPasswordError(false);
+  }
+
   function signInOnPress() {
     console.log(`Email Address = ${emailAddress} | Password = ${password}`);
-    navigation.replace('Home');
+    ((!isEmailAddressError) && (!isPasswordError)) && navigation.replace('Home');
   }
 
   function createNewAccountOnPress() {
@@ -45,17 +59,17 @@ export default function SignIn({ navigation }) {
           label='Email Address'
           placeholder='Type your email address'
           value={emailAddress}
-          onChangeText={value => setEmailAddress(value)}
-          isError={emailAddressError}
+          onChangeText={value => emailAddressOnChangeText(value)}
+          isError={isEmailAddressError}
         />
         <Gap h={16} />
         <Input
           label='Password'
           placeholder='Type your password'
           value={password}
-          onChangeText={value => setPassword(value)}
+          onChangeText={value => passwordOnChangeText(value)}
           hideText={true}
-          isError={passwordError}
+          isError={isPasswordError}
         />
         
         <Gap h={28} />

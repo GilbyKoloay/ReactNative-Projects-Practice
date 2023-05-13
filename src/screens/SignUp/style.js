@@ -23,9 +23,6 @@ export default StyleSheet.create({
     padding: 24,
   },
   addPhotoText: {
-    textAlign: 'center',
-    
-    borderWidth: 1,
-    borderColor: 'blue'
+    textAlign: 'center'
   }
 });
