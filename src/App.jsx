@@ -26,29 +26,20 @@ export default function App() {
 
 
 
-  function changeProfilePicture(value) {
-    console.log('changeProfilePicture', value);
-    if(typeof(value) === 'number') setProfilePicture(value);
-    else if(typeof(value) === 'object') setProfilePicture({uri: value.uri}); 
-  }
-
-
-
   return (
     <NavigationContainer>
       <FlashMessage position='top' />
-      <Stack.Navigator initialRouteName='SignUp' screenOptions={{headerShown: false}}>
-      {/* <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown: false}}> */}
+      <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown: false}}>
         <Stack.Screen name='Splash' component={Splash} />
         <Stack.Screen name='SignIn' component={SignIn} />
         <Stack.Screen name='SignUp'>
-          {() => <SignUp profilePicture={profilePicture} changeProfilePicture={changeProfilePicture} />}
+          {props => <SignUp {...props} profilePicture={profilePicture} setProfilePicture={setProfilePicture} />}
         </Stack.Screen>
         <Stack.Screen name='Home'>
-          {() => <Home profilePicture={profilePicture} />}
+          {props => <Home {...props} profilePicture={profilePicture} />}
         </Stack.Screen>
         <Stack.Screen name='Profil'>
-          {() => <Profil profilePicture={profilePicture} />}
+          {props => <Profil {...props} profilePicture={profilePicture} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>

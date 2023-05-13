@@ -30,7 +30,7 @@ function signUpErrorMessage(desc) {
 
 
 
-export default function SignUp({ navigation, profilePicture, changeProfilePicture }) {
+export default function SignUp({ navigation, profilePicture, setProfilePicture }) {
   const [fullName, setFullName] = useState('');
   const [fullNameError, setFullNameError] = useState('Full name must not be empty.');
   const [emailAddress, setEmailAddress] = useState('');
@@ -52,14 +52,14 @@ export default function SignUp({ navigation, profilePicture, changeProfilePictur
     });
 
     if(result.didCancel) {
-      changeProfilePicture(DefaultProfilePicture);
+      setProfilePicture(DefaultProfilePicture);
       showMessage({
         type: 'danger',
         message: 'Failed to set profile picture.'
       });
     }
     else {
-      changeProfilePicture({uri: result.assets[0].uri});
+      setProfilePicture({uri: result.assets[0].uri});
     }
   }
 

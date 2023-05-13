@@ -38,5 +38,6 @@ export default StyleSheet.create({
   image: {
     height: 52,
     width: 52,
+    borderRadius: 52/2,
   }
 });
