@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import FlashMessage from 'react-native-flash-message';
 
 // screens
 import {
@@ -19,6 +20,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
+      <FlashMessage position='top' />
       <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown: false}}>
       {/* <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown: false}}> */}
         <Stack.Screen name='Splash' component={Splash} />

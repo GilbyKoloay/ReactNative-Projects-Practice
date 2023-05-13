@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
+import { showMessage } from 'react-native-flash-message';
 
 // styles
 import globalStyle from '../../globalStyle';
@@ -15,13 +16,23 @@ import {
 
 
 
+function signUpErrorMessage(desc) {
+  showMessage({
+    type: 'danger',
+    message: 'Error to sign up',
+    description: desc
+  });
+}
+
+
+
 export default function SignUp({ navigation }) {
   const [fullName, setFullName] = useState('');
-  const [isFullNameError, setIsFullNameError] = useState(true);
+  const [fullNameError, setFullNameError] = useState('Full name must not be empty.');
   const [emailAddress, setEmailAddress] = useState('');
-  const [isEmailAddressError, setIsEmailAddressError] = useState(true);
+  const [emailAddressError, setEmailAddressError] = useState('Email address must not be empty.');
   const [password, setPassword] = useState('');
-  const [isPasswordError, setIsPasswordError] = useState(true);
+  const [passwordError, setPasswordError] = useState('Password must not be empty.');
 
 
 
@@ -36,27 +47,31 @@ export default function SignUp({ navigation }) {
   function fullNameOnChangeText(thisFullName) {
     setFullName(thisFullName);
 
-    if(thisFullName === '') setIsFullNameError(true);
-    else setIsFullNameError(false);
+    if(thisFullName === '') setFullNameError('Full name must not be empty.');
+    else setFullNameError(false);
   }
 
   function emailAddressOnChangeText(thisEmailAddress) {
     setEmailAddress(thisEmailAddress);
 
-    if(thisEmailAddress === '') setIsEmailAddressError(true);
-    else setIsEmailAddressError(false);
+    if(thisEmailAddress === '') setEmailAddressError('Email address must not be empty.');
+    else setEmailAddressError(false);
   }
   
   function passwordOnChangeText(thisPassword) {
     setPassword(thisPassword);
 
-    if(thisPassword === '') setIsPasswordError(true);
-    else setIsPasswordError(false);
+    if(thisPassword === '') setPasswordError('Password must not be empty.');
+    else setPasswordError(false);
   }
 
   function signUpOnPress() {
     console.log(`Full Name = ${fullName} | Email Address = ${emailAddress} | Password = ${password}`);
-    ((!isFullNameError) && (!isEmailAddressError) && (!isPasswordError)) && navigation.replace('Home');
+    
+    if (fullNameError) signUpErrorMessage(fullNameError);
+    else if (emailAddressError) signUpErrorMessage(emailAddressError);
+    else if (passwordError) signUpErrorMessage(passwordError);
+    else navigation.replace('Home');
   }
 
 
@@ -77,7 +92,7 @@ export default function SignUp({ navigation }) {
           placeholder='Type your full name'
           value={fullName}
           onChangeText={value => fullNameOnChangeText(value)}
-          isError={isFullNameError}
+          isError={fullNameError}
         />
         <Gap h={16} />
         <Input
@@ -86,7 +101,7 @@ export default function SignUp({ navigation }) {
           placeholder='Type your email address'
           value={emailAddress}
           onChangeText={value => emailAddressOnChangeText(value)}
-          isError={isEmailAddressError}
+          isError={emailAddressError}
         />
         <Gap h={16} />
         <Input
@@ -94,7 +109,7 @@ export default function SignUp({ navigation }) {
           placeholder='Type your password'
           value={password}
           onChangeText={value => passwordOnChangeText(value)}
-          isError={isPasswordError}
+          isError={passwordError}
           hideText={true}
         />
 
