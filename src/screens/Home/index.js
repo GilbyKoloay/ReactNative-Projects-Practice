@@ -12,12 +12,9 @@ import {
   Share
 } from '../../components';
 
-// images
-import { ProfilePicture } from '../../assets/images';
 
 
-
-export default function Home({ navigation }) {
+export default function Home({ navigation, profilePicture }) {
   function profilePictureOnPress() {
     navigation.push('Profil');
   }
@@ -38,7 +35,7 @@ export default function Home({ navigation }) {
 
   return (
     <View style={globalStyle.screenWrapper}>
-      <Header title='yUKlari' image={ProfilePicture} imageOnPress={profilePictureOnPress} />
+      <Header title='yUKlari' image={profilePicture} imageOnPress={profilePictureOnPress} />
       <View style={[globalStyle.screen, style.screen]}>
 
         <View>

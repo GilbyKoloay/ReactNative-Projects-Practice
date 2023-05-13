@@ -11,6 +11,9 @@ export default StyleSheet.create({
     paddingBottom: 42
   },
   image: {
+    height: 100,
+    width: 100,
+    borderRadius: 100/2,
     alignSelf: 'center'
   },
   mainInfoWrapper: {

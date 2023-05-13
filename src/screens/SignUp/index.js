@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, Image } from 'react-native';
 import { showMessage } from 'react-native-flash-message';
+import { launchImageLibrary } from 'react-native-image-picker';
 
 // styles
 import globalStyle from '../../globalStyle';
@@ -14,6 +15,9 @@ import {
   Button
 } from '../../components';
 
+// images
+import { DefaultProfilePicture } from '../../assets/images';
+
 
 
 function signUpErrorMessage(desc) {
@@ -26,7 +30,7 @@ function signUpErrorMessage(desc) {
 
 
 
-export default function SignUp({ navigation }) {
+export default function SignUp({ navigation, profilePicture, changeProfilePicture }) {
   const [fullName, setFullName] = useState('');
   const [fullNameError, setFullNameError] = useState('Full name must not be empty.');
   const [emailAddress, setEmailAddress] = useState('');
@@ -40,8 +44,23 @@ export default function SignUp({ navigation }) {
     navigation.pop();
   }
 
-  function addPhotoOnPress() {
-    console.log('addPhotoOnPress');
+  async function addPhotoOnPress() {
+    const result = await launchImageLibrary({
+      maxHeight: 100,
+      maxWidth: 100,
+      includeBase64: true
+    });
+
+    if(result.didCancel) {
+      changeProfilePicture(DefaultProfilePicture);
+      showMessage({
+        type: 'danger',
+        message: 'Failed to set profile picture.'
+      });
+    }
+    else {
+      changeProfilePicture({uri: result.assets[0].uri});
+    }
   }
 
   function fullNameOnChangeText(thisFullName) {
@@ -80,10 +99,14 @@ export default function SignUp({ navigation }) {
     <View style={globalStyle.screenWrapper}>
       <Header useIcon={true} title='Kembali' titleOnPress={kembaliOnPress} />
       <View style={globalStyle.screen}>
-        <TouchableOpacity style={style.addPhotoWrapper}>
-          <View style={style.addPhoto} onPress={addPhotoOnPress} activeOpacity={0.5}>
-            <Text style={style.addPhotoText}>Add Photo</Text>
-          </View>
+        <TouchableOpacity style={style.addPhotoWrapper} onPress={addPhotoOnPress}>
+            {(DefaultProfilePicture === profilePicture) ? (
+              <View style={style.addPhoto} activeOpacity={0.5}>
+                <Text style={style.addPhotoText}>Add Photo</Text>
+              </View>
+            ) : (
+              <Image style={style.addPhoto} source={profilePicture} />
+            )}
         </TouchableOpacity>
 
         <Gap h={16} />

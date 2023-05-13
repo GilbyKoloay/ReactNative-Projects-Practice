@@ -1,6 +1,6 @@
 // images
 
 import yUKlari from './yUKlari.png';
-import ProfilePicture from './ProfilePicture.png';
+import DefaultProfilePicture from './DefaultProfilePicture.png';
 
-export { yUKlari, ProfilePicture };
+export { yUKlari, DefaultProfilePicture };

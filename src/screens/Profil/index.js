@@ -12,12 +12,9 @@ import {
   Share
 } from '../../components';
 
-// images
-import { ProfilePicture } from '../../assets/images';
 
 
-
-export default function Profil({ navigation }) {
+export default function Profil({ navigation, profilePicture }) {
   function kembaliOnPress() {
     navigation.pop();
   }
@@ -39,7 +36,7 @@ export default function Profil({ navigation }) {
       <Header useIcon={true} title='Kembali' titleOnPress={kembaliOnPress} />
 
       <View style={style.main}>
-        <Image style={style.image} source={ProfilePicture} />
+        <Image style={style.image} source={profilePicture} />
         <Gap h={12} />
         <MainValue value='Tiovaldo' />
         <Gap h={20} />

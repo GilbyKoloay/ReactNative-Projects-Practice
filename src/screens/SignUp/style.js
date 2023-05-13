@@ -17,12 +17,11 @@ export default StyleSheet.create({
   addPhoto: {
     height: 90,
     width: 90,
-    borderRadius: 90/2,
-    backgroundColor: '#F0F0F0',
-
-    padding: 24,
+    borderRadius: 90/2
   },
   addPhotoText: {
+    margin: 24,
+
     textAlign: 'center'
   }
 });
