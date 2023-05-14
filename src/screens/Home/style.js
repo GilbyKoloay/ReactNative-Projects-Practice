@@ -10,7 +10,7 @@ export default StyleSheet.create({
   mainTitle: {
     fontWeight: '500',
     fontSize: 16,
-    color: '#000000'
+    color: 'red'
   },
   mainInfoWrapper: {
     flexDirection: 'row'
